@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width ,initial-scale=1.0">
+    <title>2048demo</title>
+    <link rel="stylesheet" type="text/css" href="2048.css" />
+    <script type="text/javascript" src="2048.js"></script>
+</head>
+<body>
+<div class="container">
+<header>
+    <div class="heading">
+        <h1 class="title">2048</h1>
+        <div class="scores-container">
+            <div  id="score">0</div>
+            <div  id="best-score">0</div>
+        </div>
+    </div>
+    <div class="option-buttons">
+        <input type="button" id="restart" value="restart" class="orange">
+        <input type="button" id="change-key-char" value="change key" class="orange">
+    </div>
+</header>
+
+<div id="div2048">
+    <div id="change-input">
+        <table>
+            <label for="up">up</label>
+            <input id="up" type="text" value="">
+            <label for="down">down</label>
+            <input id="down" type="text" value="">
+            <label for="left">left</label>
+            <input id="left" type="text" value="">
+            <label for="right">right</label>
+            <input id="right" type="text" value="">
+        </table>
+    </div>
+    <div id="game-over-message">
+        <p>Game Over!</p>
+        <button id="retry" class="orange">try again!</button>
+    </div>
+
+</div>
+</div>
+</body>
+</html>
