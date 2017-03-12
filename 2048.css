@@ -144,22 +144,23 @@ h1{
     font-size: larger;
     color: #7c736a;
 }
-#change-input{
-    position: absolute;
-    width: 143px;
-    top: -75px;
-    right: -150px;
-    background-color: rgba(235, 82, 0, 0.42);
-    color: #7c736a;
-    display: block;
-    z-index: 10;
-}
+#change-input {
+        position: absolute;
+        width: 143px;
+        top:0;
+        right:2px;
+        background-color: rgb(100, 253, 66);
+        color: #000000;
+        display: block;
+        z-index: 10;
+    }
 
-#up,#down,#left,#right{
-    width: 140px;
-    margin-right: 0;
-    background-color: rgba(235, 82, 0, 0.42);
-}
+    #up, #down, #left, #right {
+        width: 140px;
+        margin-right: 0;
+        background-color: rgb(255, 255, 255);
+        border: 2px #eb5200 solid;
+    }
 
 
 /*初始的各块的样式*/
