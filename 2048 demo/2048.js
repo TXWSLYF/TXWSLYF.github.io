@@ -142,7 +142,7 @@ game2048.prototype = {
 }
 
 // 定义要用到的全局变量
-var container ,reStartBtn , changeKeyBtn , retryBtn ,game ,upInput,downInput,leftInput,rightInput ;
+var container ,reStartBtn , changeKeyBtn , retryBtn ,game ,upInput,downInput,leftInput,rightInput;
 function onKeyDown(e) {
     var keynum, keychar;
     keynum = e.keyCode;         //按下的按键的ASCII码
@@ -157,7 +157,47 @@ function onKeyDown(e) {
         e.cancelBubble=true;
     }
 }
+function touchFunc(obj,type,func) {
+//滑动范围在5x5内则做点击处理，s是开始，e是结束
+    var init = {x:1,y:1,sx:0,sy:0,ex:0,ey:0};
+    type = type.toLowerCase();
+    obj.addEventListener("touchstart",function(){
+        init.sx = event.targetTouches[0].pageX;
+        init.sy = event.targetTouches[0].pageY;
+        init.ex = init.sx;
+        init.ey = init.sy;
+        if(type.indexOf("start") != -1) func();
+    }, false);
 
+    obj.addEventListener("touchmove",function() {
+        event.preventDefault();//阻止触摸时浏览器的缩放、滚动条滚动
+        init.ex = event.targetTouches[0].pageX;
+        init.ey = event.targetTouches[0].pageY;
+        if(type.indexOf("move")!=-1) func();
+    }, false);
+
+    obj.addEventListener("touchend",function() {
+        var changeX = init.sx - init.ex;
+        var changeY = init.sy - init.ey;
+        if (Math.abs(changeX) > Math.abs(changeY) && Math.abs(changeY) > init.y) {
+//左右事件
+            if (changeX > 0) {
+                if (type.indexOf("left") != -1) func();
+            } else {
+                if (type.indexOf("right") != -1) func();
+
+            }
+        }
+        else if (Math.abs(changeY) > Math.abs(changeX) && Math.abs(changeX) > init.x) {
+//上下事件
+            if (changeY > 0) {
+                if (type.indexOf("up") != -1) func();
+            } else {
+                if (type.indexOf("down") != -1) func();
+            }
+        }
+    })
+}
 window.onload = function(){
     container = document.getElementById('div2048');
     reStartBtn = document.getElementById("restart");
@@ -167,12 +207,28 @@ window.onload = function(){
     downInput=document.getElementById("down");
     leftInput=document.getElementById("left");
     rightInput=document.getElementById("right");
+    upInput.setAttribute("val","W");
+    downInput.setAttribute("val","S");
+    leftInput.setAttribute("val","A");
+    rightInput.setAttribute("val","D");
     upInput.addEventListener("keydown",onKeyDown,false);
     downInput.addEventListener("keydown",onKeyDown,false);
     leftInput.addEventListener("keydown",onKeyDown,false);
     rightInput.addEventListener("keydown",onKeyDown,false);
     game = new game2048(container);
     game.init();
+    touchFunc(container,"up",function () {
+        game.move("W");
+    });
+    touchFunc(container,"down",function () {
+        game.move("S");
+    });
+    touchFunc(container,"left",function () {
+        game.move("A");
+    });
+    touchFunc(container,"right",function () {
+        game.move("D");
+    });
     reStartBtn.onclick = function () {
         game.clean();                           //清空16个“瓦块”
         document.getElementById("game-over-message").style.display="none";    //将结束提示信息隐藏
