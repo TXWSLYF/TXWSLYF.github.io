@@ -132,8 +132,9 @@ header{
     width: 20%;
     height: 10%;
     padding: 5% 0;
-    font-size: 2.3em;
+    font-size: 2em;
     text-align: center;
+    border-radius: 5%;
     float: left; /*使得生成的div向左浮动*/
 }
 
@@ -196,7 +197,39 @@ header{
     color: #fff7eb;
     background: #eec22e;
 }
+.merge{
+    animation:merge 0.5s linear;
+}
+@keyframes merge {
+    25%{
+        transform: scale(0.9);
+    }
+    50%{
+        transform: scale(1);
+    }
+    75%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
 
+}
+@keyframes  merge4{
+    25%{
+        transform: scale(0.9);
+    }
+    50%{
+        transform: scale(1);
+    }
+    75%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+
+}
 
 @media only screen and (min-width: 500px) {
     #restart{
@@ -214,7 +247,7 @@ header{
         position: absolute;
         width: 20%;
         top:0;
-        right:3px;
+        right:0;
         background-color: greenyellow;
         z-index: 10;
         display: block;
