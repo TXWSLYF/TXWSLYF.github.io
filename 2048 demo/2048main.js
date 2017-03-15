@@ -41,7 +41,7 @@ game2048.prototype = {
         if(zeroTiles.length>0){                           //判断剩下的div是否有为空的
             var rTile = zeroTiles[Math.floor(Math.random() * zeroTiles.length)];//Math.floor(x),返回一个最接近但小于x的整数
             // Math.random(),无参，返回一个0-1之间的随机数
-            this.setTileVal(rTile, Math.random() < 2 ? 2 : 4);        //向其中随机添加2或者4
+            this.setTileVal(rTile, Math.random() < 0.8 ? 2 : 4);        //向其中随机添加2或者4
         }
     },
     move:function(direction){
