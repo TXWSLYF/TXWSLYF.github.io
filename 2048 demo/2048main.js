@@ -103,17 +103,17 @@ Game2048.prototype = {
             }
             else if(prevVal == currVal){
                 this.setTileVal(prevTile, prevVal * 2);
-                var classname=prevTile.getAttribute('class');
                 prevTile.setAttribute("mergeable",false);              //设置其不可再融合
                 this.setTileVal(currTile, 0);
                 this.score+=prevVal*2;                             //计分
                 if(this.score>=this.bestScore){
                     this.bestScore=this.score;
                 }
-                prevTile.setAttribute('class','');
-                setTimeout(function () {                         //setTimeout(fu(),0)的重要性！！！！！！！！！！
-                    prevTile.setAttribute('class',classname+" merge");
-                },0);
+                // var classname=prevTile.getAttribute('class');
+                // prevTile.setAttribute('class','');
+                // setTimeout(function () {                         //setTimeout(fu(),0)的重要性！！！！！！！！！！
+                //     prevTile.setAttribute('class',classname+" merge");
+                // },0);
 
             }
         }
