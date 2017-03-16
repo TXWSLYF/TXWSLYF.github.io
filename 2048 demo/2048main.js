@@ -1,7 +1,7 @@
 /**
  * Created by Alex on 2017/3/13.
  */
-function game2048(container)    //使用构造函数方法创建了一个对象模版game2048
+function Game2048(container)    //使用构造函数方法创建了一个对象模版game2048
 {
     this.container = container;  //定义对象的container属性
     this.tiles = new Array(16);  //定义对象的tiles属性并为其初始化
@@ -9,7 +9,7 @@ function game2048(container)    //使用构造函数方法创建了一个对象�
     this.bestScore=0;
 }
 
-game2048.prototype = {
+Game2048.prototype = {
     init: function(){               //初始化函数
         for(var i = 0, len = this.tiles.length; i < len; i++){
             var tile = this.newTile(0);           //创建变量tile为将要添加的块
@@ -160,7 +160,7 @@ game2048.prototype = {
 
 // 定义要用到的全局变量
 var container ,reStartBtn , changeKeyBtn , retryBtn ,game ,upInput,downInput,leftInput,rightInput;
-function onKeyDown(e) {
+function changeDirection(e) {
     var keynum, keychar;
     keynum = e.keyCode;         //按下的按键的ASCII码
     keychar = String.fromCharCode(keynum);
@@ -175,8 +175,8 @@ function onKeyDown(e) {
     }
 }
 function message() {
-    document.getElementById("score").innerHTML=game.score;
-    document.getElementById("best-score").innerHTML=game.bestScore;
+    document.getElementById("score").innerHTML=game.score;          //修改当前显示分数
+    document.getElementById("best-score").innerHTML=game.bestScore;               //修改最高分
     if(game.win()){
         document.getElementsByTagName("p").item(0).textContent="You Win!";           //将提示信息修改为获胜
         document.getElementById("game-over-message").style.display="block";         //获胜弹出提示框
@@ -189,7 +189,7 @@ function message() {
     }
 }
 
-window.onload = function(){
+window.onload = function(){                                            //所有的初始化工作
     container = document.getElementById('div2048');
     reStartBtn = document.getElementById("restart");
     changeKeyBtn = document.getElementById("change-key-char");
@@ -202,14 +202,12 @@ window.onload = function(){
     downInput.setAttribute("val","S");
     leftInput.setAttribute("val","A");
     rightInput.setAttribute("val","D");
-    upInput.addEventListener("keydown",onKeyDown,false);
-    downInput.addEventListener("keydown",onKeyDown,false);
-    leftInput.addEventListener("keydown",onKeyDown,false);
-    rightInput.addEventListener("keydown",onKeyDown,false);
-    game = new game2048(container);
+    upInput.addEventListener("keydown",changeDirection,false);
+    downInput.addEventListener("keydown",changeDirection,false);
+    leftInput.addEventListener("keydown",changeDirection,false);
+    rightInput.addEventListener("keydown",changeDirection,false);
+    game = new Game2048(container);
     game.init();
-    // game.tiles[3].setAttribute('mergeable',false);
-    // alert(game.tiles[3].getAttribute('mergeable')&game.tiles[4].getAttribute('mergeable'));
     touchFunc(container,"up",function () {
         game.move("W");
         message();
@@ -262,7 +260,7 @@ window.onkeydown = function(e) {                               //按键检测
     down = document.getElementById("down").getAttribute("val");
     left = document.getElementById("left").getAttribute("val");
     right = document.getElementById("right").getAttribute("val");
-    if ([up, down, left, right].indexOf(keychar) > -1) {
+    if ([up, down, left, right].indexOf(keychar) > -1) {             //如果上下左右键被触发
         game.move(keychar);
         message();
     }
