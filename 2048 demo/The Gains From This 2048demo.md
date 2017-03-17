@@ -2,7 +2,6 @@
 http://stackoverflow.com/questions/11973678/difference-between-element-value-and-element-getattributevalue
 
 2.Why is setTimeout(fn, 0) sometimes useful?
-
 http://stackoverflow.com/questions/779379/why-is-settimeoutfn-0-sometimes-useful
 
 
