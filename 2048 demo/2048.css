@@ -82,6 +82,7 @@ header{
 #div2048 {
     width:300px;
     height:300px;
+    border-radius: 5%;
     margin: auto;
     background-color: #a39a89;
     position: relative;
