@@ -47,7 +47,7 @@ Game2048.prototype = {
     move:function(direction){
         var j;
         switch(direction){
-            case document.getElementById("up").getAttribute("val"):
+            case document.getElementById("up").value.toUpperCase():
                 for(var i = 4, len = this.tiles.length; i < len; i++){
                     j = i;
                     for(j;j>=4;j-=4){
@@ -57,7 +57,7 @@ Game2048.prototype = {
                     }
                 }
                 break;
-            case document.getElementById("down").getAttribute("val"):
+            case document.getElementById("down").value.toUpperCase():
                 for(var i = 11; i >= 0; i--){
                     j = i;
                     for(j;j<=11;j+=4){
@@ -67,7 +67,7 @@ Game2048.prototype = {
                     }
                 }
                 break;
-            case document.getElementById("left").getAttribute("val"):
+            case document.getElementById("left").value.toUpperCase():
                 for(var i = 1, len = this.tiles.length; i < len; i++){
                     j = i;
                     for(j;j % 4 != 0;j-=1){
@@ -77,7 +77,7 @@ Game2048.prototype = {
                     }
                 }
                 break;
-            case document.getElementById("right").getAttribute("val"):
+            case document.getElementById("right").value.toUpperCase():
                 for(var i = 14; i >= 0; i--){
                     j = i;
                     for(j;j % 4 != 3;j+=1){
@@ -159,21 +159,7 @@ Game2048.prototype = {
 }
 
 // 定义要用到的全局变量
-var container ,reStartBtn , changeKeyBtn , retryBtn ,game ,upInput,downInput,leftInput,rightInput;
-function changeDirection(e) {
-    var keynum, keychar;
-    keynum = e.keyCode;         //按下的按键的ASCII码
-    keychar = String.fromCharCode(keynum);
-    if(keynum!=9){             //防止回车键被写入
-        this.setAttribute("val",keychar);
-    }
-    if(e.stopPropagation()){     //阻止键盘事件冒泡
-        e.stopPropagation();
-    }
-    else {
-        e.cancelBubble=true;
-    }
-}
+var container ,reStartBtn , changeKeyBtn , retryBtn ,game ;
 function message() {
     document.getElementById("score").innerHTML=game.score;          //修改当前显示分数
     document.getElementById("best-score").innerHTML=game.bestScore;               //修改最高分
@@ -194,34 +180,22 @@ window.onload = function(){                                            //所有�
     reStartBtn = document.getElementById("restart");
     changeKeyBtn = document.getElementById("change-key-char");
     retryBtn = document.getElementById("retry");
-    upInput=document.getElementById("up");
-    downInput=document.getElementById("down");
-    leftInput=document.getElementById("left");
-    rightInput=document.getElementById("right");
-    upInput.setAttribute("val","W");
-    downInput.setAttribute("val","S");
-    leftInput.setAttribute("val","A");
-    rightInput.setAttribute("val","D");
-    upInput.addEventListener("keydown",changeDirection,false);
-    downInput.addEventListener("keydown",changeDirection,false);
-    leftInput.addEventListener("keydown",changeDirection,false);
-    rightInput.addEventListener("keydown",changeDirection,false);
     game = new Game2048(container);
     game.init();
     touchFunc(container,"up",function () {
-        game.move("W");
+        game.move(document.getElementById("up").value);
         message();
     });
     touchFunc(container,"down",function () {
-        game.move("S");
+        game.move(document.getElementById("down").value);
         message();
     });
     touchFunc(container,"left",function () {
-        game.move("A");
+        game.move(document.getElementById("left").value);
         message();
     });
     touchFunc(container,"right",function () {
-        game.move("D");
+        game.move(document.getElementById("right").value);
         message();
     });
     reStartBtn.onclick = function () {
@@ -256,10 +230,10 @@ window.onkeydown = function(e) {                               //按键检测
         keynum = e.which;
     }
     keychar = String.fromCharCode(keynum);
-    up = document.getElementById("up").getAttribute("val");
-    down = document.getElementById("down").getAttribute("val");
-    left = document.getElementById("left").getAttribute("val");
-    right = document.getElementById("right").getAttribute("val");
+    up = document.getElementById("up").value.toUpperCase();
+    down = document.getElementById("down").value.toUpperCase();
+    left = document.getElementById("left").value.toUpperCase();
+    right = document.getElementById("right").value.toUpperCase();
     if ([up, down, left, right].indexOf(keychar) > -1) {             //如果上下左右键被触发
         game.move(keychar);
         message();
