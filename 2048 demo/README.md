@@ -9,4 +9,4 @@
 2.利⽤chrome    devtool的移动开发模式，模拟移动端运⾏，实现响应式布局，模拟⼿机触摸操作<br/>
 
 ### 试玩地址<br/>
-<a> www.luyufeng.wang/2048 demo/2048demo</a>
+www.luyufeng.wang/2048-demo/2048demo
