@@ -58,6 +58,7 @@ header{
     width: 60%;
     margin-left: 20%;
     font-size: 2em;
+    cursor: pointer;
 }
 .orange {
     color: white;
@@ -119,6 +120,7 @@ header{
     height: 10%;
     font-size: 1.5em;
     color: black;
+    cursor: pointer;
 }
 #up, #down, #left, #right {
     width: 96%;
@@ -227,6 +229,7 @@ header{
         margin-right: 3%;
         font-size: 2em;
         display: inline;
+        cursor: pointer;
     }
     #change-input {
         position: absolute;
