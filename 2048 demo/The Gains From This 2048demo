@@ -1,7 +1,3 @@
 1.Difference between Element.value and Element.getAttribute(“value”)
+http://stackoverflow.com/questions/11973678/difference-between-element-value-and-element-getattributevalue
 
-.value does not map to any attribute.
-.defaultValue maps to the "value" attribute. So when you say elem.getAttribute("value") that's the same as elem.defaultValue.
-Additionally, .defaultValue reflects .value when the input is untouched (dirty value flag is false). After the input's value is changed 
-by user interaction, this mapping stops. While the input is untouched, you can change .defaultValue (and thus .setAttribute("value")) 
-and see it change .value as well. Not that this is practically useful but interesting piece of trivia nevertheless.
