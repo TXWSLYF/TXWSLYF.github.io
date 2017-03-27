@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多级导航</title>
+    <style>
+        body{
+            padding: 20px 50px 150px;
+            text-align: center;
+            background: #DEFCC3;
+        }
+        ul{
+            display: inline;
+            margin: 0;
+            padding: 15px 4px 17px 0;
+            list-style: none;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+        }
+        ul li{
+            font-weight: bold;
+            display: inline-block;
+            margin-right: -4px;
+            padding: 15px 20px;
+            background: #fff;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        ul li:hover{
+            background: #555;
+            color: #fff;
+        }
+        ul li ul{
+            padding: 0;
+            position: absolute;
+            top: 75px;
+            margin-left: -20px;
+            width: 150px;
+            box-shadow: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            display: none;
+        }
+
+        ul li ul li{
+            text-align: left;
+            background: #555;
+            display: block;
+            color: #fff;
+            text-shadow: 0 -1px 0 #000;
+            cursor: pointer;
+        }
+
+        ul li ul li:hover{
+            background: #666;
+        }
+
+        ul li:hover ul{
+            /* this reveals the dropdown menu on hover */
+            display: block;
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Shop
+                <ul>
+                    <li>Women</li>
+                    <li>Mens</li>
+                    <li>Kids</li>
+                </ul>
+            </li>
+            <li>Blog</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+</body>
+</html>

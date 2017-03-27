@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模拟滚动条拖拽</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 300px;
+            height: 30px;
+            border: solid black 1px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -100px;
+            margin-top: -10px;
+        }
+        #slider{
+            position: absolute;
+            width: 40px;
+            height: 30px;
+            background-color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="slider"></div>
+</div>
+<script>
+    var container = document.getElementById("container");
+    var slider = document.getElementById("slider");
+    slider.onmousedown = function (e) {
+        var posX = e.offsetX;
+        document.onmousemove = function (e) {
+            var left = e.clientX - posX - container.offsetLeft;
+            if (left <= 0){
+                left = 0;
+            }
+            else if (left >= container.offsetWidth - slider.offsetWidth){
+                left = container.offsetWidth - slider.offsetWidth;
+            }
+            slider.style.left = left + 'px';
+
+        }
+        document.onmouseup = function (e) {
+            this.onmousemove = null;
+            this.onmouseup = null;
+        }
+    }
+</script>
+</body>
+</html>

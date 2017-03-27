@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>倒计时</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        #container {
+            width: 600px;
+            margin: 100px auto;
+            text-align: center;
+        }
+        h1 {
+            color: #ABCDEF;
+            border-bottom: 1px solid #ccc;
+        }
+        #showDay {
+            font-size: 160px;
+            line-height: 160px;
+            width: 100%;
+            text-align: center;
+            color: #00E751;
+        }
+        #showTime {
+            font-family: cursive,sans-serif;
+            color: #5B5F67;
+            font-size: 55px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <label for="dateInput">请输入日期</label>
+    <input type="date" id="dateInput">
+    <h1 id="title"></h1>
+    <h2 id="showDay"></h2>
+    <span id="showTime"></span>
+</div>
+<script>
+    var dateInput = document.getElementById('dateInput');      //获取日历元素
+    var title = document.getElementById('title');              //获取标题元素
+    var showDay = document.getElementById('showDay');
+    var showTime = document.getElementById('showTime');
+    var endDate;
+    dateInput.onchange = function () {
+        var endDateArr = dateInput.value.split('-');            //用来获得用户输入的时间
+        var endYear = parseInt(endDateArr[0]);                 //获得输入的年份
+        var endMonth = parseInt(endDateArr[1]);               //获得输入的月份
+        var endDay = parseInt(endDateArr[2]);                //获得输入的日期
+        title.innerHTML = "距离"+endYear+"年"+endMonth+"月"+endDay+"日还剩";
+        endDate = new Date(endYear,endMonth - 1,endDay);
+        setInterval(function(){
+            showCountDown();
+        }, 1000);
+    }
+    function showCountDown() {
+        var now = new  Date();                                                         //用来获得现在的时间
+        var leftTime = endDate.getTime()-now.getTime();                               //相差的毫秒数,getTime()返回 1970 年 1 月 1 日至今的毫秒数。
+        var leftSecond = parseInt(leftTime/1000);                                    //相差的秒数
+        var day = Math.floor(leftSecond/(60*60*24));                                //显示的天数
+        var hour = Math.floor((leftSecond%(60*60*24))/3600);                       //显示的小时
+        var minute = Math.floor((leftSecond-day*24*60*60-hour*3600)/60);          //显示的分钟
+        var second = Math.floor(leftSecond-day*24*60*60-hour*3600-minute*60);    //显示的秒数
+
+        showDay.innerHTML = day + "天";                                        //将剩余时间显示到浏览器上
+        showTime.innerHTML = hour+"小时"+minute+"分钟"+second+"秒";
+    }
+</script>
+</body>
+</html>
