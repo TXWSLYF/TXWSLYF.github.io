@@ -42,7 +42,7 @@
         pox.style.left = box.offsetLeft+ 'px';
         pox.style.top = box.offsetTop + 'px';
         document.body.appendChild(pox);
-        pox.onmousemove = function(e) {
+        document.onmousemove = function(e) {
             var e = e || window.event;
             var left = e.clientX - posX;
             var top = e.clientY - posY;
@@ -59,7 +59,9 @@
             pox.style.left = left + 'px';
             pox.style.top = top + 'px';
         }
-        pox.onmouseup = function(e) {
+        document.onmouseup = function(e) {
+            document.onmousemove = null;
+            document.onmouseup = null;
             box.style.left = pox.offsetLeft + 'px';
             box.style.top = pox.offsetTop + 'px';
             document.body.removeChild(pox);
