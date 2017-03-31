@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用键盘控制方块</title>
+    <style>
+        #introduction{
+            background-color: #e7fcb6;
+            height: 200px;
+            margin: 10px 20px;
+            border: dotted 2px #eb5200;
+        }
+        pre{
+            color: #00973a;
+        }
+        #box{
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="introduction">
+    <pre>
+        红色方块为键盘操作区域，您可以进行如下操作：
+
+        上：↑ 下：↓ 左：← 右：→
+
+        Ctrl + 1 : 背景变为绿色
+        Ctrl + 2 : 背景变为黄色
+        Ctrl + 3 : 背景变为蓝色
+        Ctrl + ↑ : 放大
+        Ctrl + ↓ : 缩小
+    </pre>
+</div>
+<div id="box" style="left: 300px;top: 300px"></div>
+<script>
+    var box = document.getElementById("box");
+    var keysDown = {};                        //创建一个用来存储按下的按键的对象
+    window.onkeydown = function (e) {       //如果按下一个按键，就把它存储到按键对象中
+        keysDown[e.keyCode] = true;
+        return false;                     //阻止默认事件
+    };
+    window.onkeyup = function (e) {       //如果某个按键抬起，则将其从按键对象中删除
+        delete keysDown[e.keyCode];
+    }
+    function change() {
+        if ((17 in keysDown) && (38 in keysDown)){
+            var width1 = box.offsetWidth;
+            box.style.width = width1 + 'px';
+            box.style.width = (parseInt(box.style.width) + 3) + 'px';
+            var height1 = box.offsetHeight;
+            box.style.height = height1 + 'px';
+            box.style.height = (parseInt(box.style.height) + 3) + 'px'
+        }
+        if ((17 in keysDown) && (40 in keysDown)){
+            var width = box.offsetWidth;
+            box.style.width = width + 'px';
+            box.style.width = (parseInt(box.style.width) - 3) + 'px';
+            var height = box.offsetHeight;
+            box.style.height = height + 'px';
+            box.style.height = (parseInt(box.style.height) - 3) + 'px'
+        }
+        else if (38 in keysDown){
+            box.style.top = (parseInt(box.style.top) - 2) + 'px';
+        }
+        if (40 in keysDown){
+            box.style.top = (parseInt(box.style.top) + 2) + 'px';
+        }
+        if (37 in keysDown){
+            box.style.left = (parseInt(box.style.left) - 2) + 'px';
+        }
+        if (39 in keysDown){
+            box.style.left = (parseInt(box.style.left) + 2) + 'px';
+        }
+        if ((17 in keysDown) && (49 in keysDown)){
+            box.style.backgroundColor = 'green';
+        }
+        if ((17 in keysDown) && (50 in keysDown)){
+            box.style.backgroundColor = 'blue';
+        }
+        if ((17 in keysDown) && (51 in keysDown)){
+            box.style.backgroundColor = 'yellow';
+        }
+    }
+    setInterval(function () {
+        change();
+    },5);
+</script>
+</body>
+</html>
