@@ -138,6 +138,7 @@ header{
     font-size: 2em;
     text-align: center;
     border-radius: 5%;
+    line-height: 30px;
     float: left; /*使得生成的div向左浮动*/
 }
 
@@ -243,6 +244,9 @@ header{
     #div2048 {
         width:500px;
         height:500px;
+    }
+    #div2048 div.tile{
+        line-height: 50px;
     }
     #game-over-message p{
         line-height: 300px;

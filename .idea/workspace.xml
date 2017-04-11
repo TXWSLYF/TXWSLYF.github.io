@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="48d7c1ff-a388-4016-8520-ea2fc3777de6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2048-demo/2048main.js" afterPath="$PROJECT_DIR$/2048-demo/2048main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2048-demo/2048.css" afterPath="$PROJECT_DIR$/2048-demo/2048.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demos/仿腾讯微博效果/仿腾讯微博效果.html" afterPath="$PROJECT_DIR$/demos/仿腾讯微博效果/仿腾讯微博效果.html" />
     </list>
     <ignored path="TXWSLYF.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,8 +29,28 @@
       <file leaf-file-name="仿腾讯微博效果.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demos/仿腾讯微博效果/仿腾讯微博效果.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1862">
-              <caret line="98" column="29" selection-start-line="98" selection-start-column="29" selection-end-line="98" selection-end-column="29" />
+            <state relative-caret-position="2850">
+              <caret line="150" column="8" selection-start-line="150" selection-start-column="8" selection-end-line="150" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="transform3D旋转相册.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demos/transform3D旋转相册/transform3D旋转相册.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-266">
+              <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2048.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/2048-demo/2048.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="469">
+              <caret line="248" column="26" selection-start-line="248" selection-start-column="26" selection-end-line="248" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -45,10 +66,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2048main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2048main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/2048-demo/2048main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-455">
+            <state relative-caret-position="1805">
               <caret line="95" column="6" selection-start-line="95" selection-start-column="6" selection-end-line="95" selection-end-column="6" />
               <folding />
             </state>
@@ -58,7 +79,7 @@
       <file leaf-file-name="2048demo.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/2048-demo/2048demo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-38">
+            <state relative-caret-position="76">
               <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
               <folding />
             </state>
@@ -88,9 +109,10 @@
         <option value="$PROJECT_DIR$/demos/用键盘控制方块.html" />
         <option value="$PROJECT_DIR$/demos/transform3D旋转相册/transform3D旋转相册.html" />
         <option value="$PROJECT_DIR$/demos/index.html" />
-        <option value="$PROJECT_DIR$/demos/仿腾讯微博效果/仿腾讯微博效果.html" />
         <option value="$PROJECT_DIR$/2048-demo/mobile_touch_function.js" />
         <option value="$PROJECT_DIR$/2048-demo/2048main.js" />
+        <option value="$PROJECT_DIR$/demos/仿腾讯微博效果/仿腾讯微博效果.html" />
+        <option value="$PROJECT_DIR$/2048-demo/2048.css" />
       </list>
     </option>
   </component>
@@ -165,8 +187,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -631,11 +653,13 @@
       <workItem from="1491833490628" duration="1305000" />
       <workItem from="1491883584178" duration="276000" />
       <workItem from="1491884062923" duration="876000" />
+      <workItem from="1491901143536" duration="1246000" />
+      <workItem from="1491918962328" duration="588000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13340000" />
+    <option name="totallyTimeSpent" value="15174000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1370" height="735" extended-state="0" />
@@ -687,13 +711,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/demos/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demos/用键盘控制方块/用键盘控制方块.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1425">
@@ -988,13 +1005,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demos/transform3D旋转相册/transform3D旋转相册.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demos/用键盘控制方块/用键盘控制方块.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1425">
@@ -1016,14 +1026,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demos/仿腾讯微博效果/仿腾讯微博效果.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1862">
-          <caret line="98" column="29" selection-start-line="98" selection-start-column="29" selection-end-line="98" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/2048-demo/mobile_touch_function.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -1032,18 +1034,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/2048-demo/2048main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1805">
+          <caret line="95" column="6" selection-start-line="95" selection-start-column="6" selection-end-line="95" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demos/仿腾讯微博效果/仿腾讯微博效果.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2850">
+          <caret line="150" column="8" selection-start-line="150" selection-start-column="8" selection-end-line="150" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demos/transform3D旋转相册/transform3D旋转相册.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-266">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/2048-demo/2048demo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38">
+        <state relative-caret-position="76">
           <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/2048-demo/2048main.js">
+    <entry file="file://$PROJECT_DIR$/2048-demo/2048.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-455">
-          <caret line="95" column="6" selection-start-line="95" selection-start-column="6" selection-end-line="95" selection-end-column="6" />
+        <state relative-caret-position="469">
+          <caret line="248" column="26" selection-start-line="248" selection-start-column="26" selection-end-line="248" selection-end-column="26" />
           <folding />
         </state>
       </provider>
