@@ -45,10 +45,11 @@ Game2048.prototype = {
         }
     },
     move: function (direction) {
-        var j;
+        var i, j, len;
+        len = this.tiles.length;
         switch (direction) {
             case document.getElementById("up").value.toUpperCase():
-                for (var i = 4, len = this.tiles.length; i < len; i++) {
+                for (i = 4; i < len; i++) {
                     j = i;
                     for (j; j >= 4; j -= 4) {
                         if ((this.tiles[j - 4].getAttribute("mergeable") == "true") && (this.tiles[j].getAttribute("mergeable") == "true")) {        //要先判断这两个div是否都可以融合
@@ -58,7 +59,7 @@ Game2048.prototype = {
                 }
                 break;
             case document.getElementById("down").value.toUpperCase():
-                for (var i = 11; i >= 0; i--) {
+                for (i = 11; i >= 0; i--) {
                     j = i;
                     for (j; j <= 11; j += 4) {
                         if ((this.tiles[j + 4].getAttribute("mergeable") == "true") && (this.tiles[j].getAttribute("mergeable") == "true")) {
@@ -68,7 +69,7 @@ Game2048.prototype = {
                 }
                 break;
             case document.getElementById("left").value.toUpperCase():
-                for (var i = 1, len = this.tiles.length; i < len; i++) {
+                for (i = 1; i < len; i++) {
                     j = i;
                     for (j; j % 4 != 0; j -= 1) {
                         if ((this.tiles[j - 1].getAttribute("mergeable") == "true") && (this.tiles[j].getAttribute("mergeable") == "true")) {
@@ -78,7 +79,7 @@ Game2048.prototype = {
                 }
                 break;
             case document.getElementById("right").value.toUpperCase():
-                for (var i = 14; i >= 0; i--) {
+                for (i = 14; i >= 0; i--) {
                     j = i;
                     for (j; j % 4 != 3; j += 1) {
                         if ((this.tiles[j + 1].getAttribute("mergeable") == "true") && (this.tiles[j].getAttribute("mergeable") == "true")) {
@@ -88,7 +89,7 @@ Game2048.prototype = {
                 }
                 break;
         }
-        for (var i = 0, len = this.tiles.length; i < len; i++) {
+        for (i = 0; i < len; i++) {
             this.tiles[i].setAttribute("mergeable", true);
         }
         this.randomTile();
