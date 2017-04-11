@@ -2,30 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48d7c1ff-a388-4016-8520-ea2fc3777de6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demos/仿腾讯微博效果/image/face.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demos/仿腾讯微博效果/image/face1.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demos/仿腾讯微博效果/image/face2.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demos/仿腾讯微博效果/image/face3.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demos/仿腾讯微博效果/image/face4.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demos/仿腾讯微博效果/image/face5.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demos/仿腾讯微博效果/image/face6.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demos/仿腾讯微博效果/image/face7.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demos/仿腾讯微博效果/image/face8.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demos/jquery-3.1.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demos/仿腾讯微博效果/仿腾讯微博效果.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/demos/HTML5图片上传预览.html" afterPath="$PROJECT_DIR$/demos/HTML5图片上传预览/HTML5图片上传预览.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/demos/transform3D旋转相册.html" afterPath="$PROJECT_DIR$/demos/transform3D旋转相册/transform3D旋转相册.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/demos/多级导航.html" afterPath="$PROJECT_DIR$/demos/多级导航/多级导航.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/demos/拖拽.html" afterPath="$PROJECT_DIR$/demos/拖拽/拖拽.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/demos/模拟滚动条拖拽.html" afterPath="$PROJECT_DIR$/demos/拖拽/模拟滚动条拖拽.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/demos/用键盘控制方块.html" afterPath="$PROJECT_DIR$/demos/用键盘控制方块/用键盘控制方块.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/demos/计时器.html" afterPath="$PROJECT_DIR$/demos/计时器/计时器.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/demos/评分功能.html" afterPath="$PROJECT_DIR$/demos/评分功能/评分功能.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/demos/轮播图.html" afterPath="$PROJECT_DIR$/demos/轮播图/轮播图.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2048-demo/2048main.js" afterPath="$PROJECT_DIR$/2048-demo/2048main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2048-demo/mobile_touch_function.js" afterPath="$PROJECT_DIR$/2048-demo/mobile_touch_function.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demos/index.html" afterPath="$PROJECT_DIR$/demos/index.html" />
     </list>
     <ignored path="TXWSLYF.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,7 +37,7 @@
       <file leaf-file-name="mobile_touch_function.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/2048-demo/mobile_touch_function.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
+            <state relative-caret-position="285">
               <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
               <folding />
             </state>
@@ -70,8 +47,8 @@
       <file leaf-file-name="2048main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/2048-demo/2048main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="183" column="16" selection-start-line="183" selection-start-column="16" selection-end-line="183" selection-end-column="16" />
+            <state relative-caret-position="115">
+              <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -153,7 +130,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -189,6 +165,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -652,14 +629,15 @@
       <workItem from="1491282295061" duration="1321000" />
       <workItem from="1491833490628" duration="1305000" />
       <workItem from="1491883584178" duration="276000" />
+      <workItem from="1491884062923" duration="401000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12464000" />
+    <option name="totallyTimeSpent" value="12865000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1370" height="735" extended-state="0" />
+    <frame x="-7" y="0" width="1370" height="735" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1045,6 +1023,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/2048-demo/mobile_touch_function.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/2048-demo/2048demo.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1053,18 +1039,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/2048-demo/mobile_touch_function.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/2048-demo/2048main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="183" column="16" selection-start-line="183" selection-start-column="16" selection-end-line="183" selection-end-column="16" />
+        <state relative-caret-position="115">
+          <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
           <folding />
         </state>
       </provider>
