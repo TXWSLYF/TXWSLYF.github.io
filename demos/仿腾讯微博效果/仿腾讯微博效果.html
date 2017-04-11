@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>仿腾讯微博效果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 100%;
+        }
+
+        html {
+            background-color: black;
+        }
+
+        #container {
+            max-width: 600px;
+            width: 80%;
+            margin: 10px auto;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #fffef2;
+        }
+        #inputArea{
+            padding: 10px;
+            background: -webkit-linear-gradient(#ffffff,#939197); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(#ffffff, #939197); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(#ffffff, #939197); /* Firefox 3.6 - 15 */
+            background: linear-gradient(#ffffff, #939197); /* 标准的语法 */
+        }
+
+        #text {
+            font-size: 1.1em;
+            margin-top: 10px;
+            width: 25%;
+            float: left;
+            border-radius: 3px;
+        }
+
+        ul li {
+            list-style: none;
+            float: left;
+            margin-left: 2%;
+            width: 7%;
+            margin-top: 10px;
+            opacity: 0.3;
+            border-radius: 3px;
+        }
+
+        .focus {
+            opacity: 1;
+            border: 1px solid red;
+        }
+
+        ul li:hover {
+            opacity: 1;
+            border: 1px solid red;
+        }
+
+        ul li img {
+            width: 100%;
+            /*!!!!*/
+            display: block;
+        }
+
+        #textarea {
+            font-size: 1.1em;
+            margin-top: 10px;
+            width: 100%;
+            height: 100px;
+            border-radius: 3px;
+        }
+        #submitContainer{
+            margin-top: 10px;
+            text-align: right;
+        }
+        #showWordsLeft{
+            display: inline;
+        }
+        #submit{
+            text-align: center;
+            margin-left: 5px;
+            width: 20%;
+            font-size: 1.1em;
+            border-radius: 3px;
+            letter-spacing: 0.5em;
+            color: #514e53;
+            background-color:#bcffc8;
+        }
+        #submit:hover{
+            background: -webkit-linear-gradient(#bcffc8, #16ff4f); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(#bcffc8, #16ff4f); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(#bcffc8, #16ff4f); /* Firefox 3.6 - 15 */
+            background: linear-gradient(#bcffc8, #16ff4f); /* 标准的语法 */
+        }
+
+        #showMessages{
+            margin-top: 20px;
+        }
+        header{
+            height: 40px;
+            background-color: #bdbbc1;
+            position: relative;
+        }
+        #headnote{
+            height: 30px;
+            position: absolute;
+            width: 15%;
+            text-align: center;
+            background-color: white;
+            top: 10px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="inputArea">
+        <p>来，说说你在做什么，想什么</p>
+        <input id="text" type="text" placeholder="请输入姓名！">
+        <ul id="usersImagesList">
+            <li class="focus"><img src="image/face1.gif"></li>
+            <li><img src="image/face2.gif"></li>
+            <li><img src="image/face3.gif"></li>
+            <li><img src="image/face4.gif"></li>
+            <li><img src="image/face5.gif"></li>
+            <li><img src="image/face6.gif"></li>
+            <li><img src="image/face7.gif"></li>
+            <li><img src="image/face8.gif"></li>
+        </ul>
+        <textarea id="textarea" placeholder="请输入你想说的话!"></textarea>
+        <div id="submitContainer">
+            <p id="showWordsLeft">还能输入140个字</p>
+            <button id="submit">广播</button>
+        </div>
+    </div>
+    <div id="showMessages">
+        <header>
+            <div id="headnote">
+                <p>大家在说</p>
+            </div>
+        </header>
+    </div>
+
+
+</div>
+
+</body>
+<script src="../jquery-3.1.1.min.js"></script>
+</html>
