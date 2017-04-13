@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+body{
+    background-color: aliceblue;
+}
+header{
+    text-align: center;
+}
+header h1{
+    font-size: 2em;
+    margin-top: 20px;
+}
+header h2{
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+#container{
+    position: relative;
+}
+#newQuoteBtn{
+    background-color:#44c767;
+    display:block;
+    width: 80px;
+    height:45px;
+    -moz-border-radius:28px;
+    -webkit-border-radius:28px;
+    border-radius:28px;
+    border:1px solid #18ab29;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:17px;
+    margin: 25px auto;
+    text-decoration:none;
+    text-shadow:0 1px 0 #2f6627;
+    text-align: center;
+    line-height: 40px;
+}
+#newQuoteBtn:hover{
+    background-color:#5cbf2a;
+}
+#newQuoteBtn:active{
+    position: relative;
+    top: 1px;
+}
+#quote{
+    background-color: #faf976;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 30px 20px 50px;
+    text-indent: 1em;
+    font-size: 1.2em;
+    font-weight: 500;
+    font-family: "Comic Sans MS" ,"Cooper Std Black",sans-serif;
+}
+#quoteAuthor{
+    display: block;
+    margin-top: 50px;
+    text-align:right;
+}
+footer{
+    margin-top: 40px;
+    position: relative;
+}
+#shareToTwitter{
+    display: block;
+    width: 40px;
+    margin: 0 auto;
+    background-color: deepskyblue;
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#shareToTwitter:active{
+    position: relative;
+    top: 1px;
+}
+
