@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var pattern = /(.+)\((.+)\)[^\d]+(\d+(?:-\d+)?).+(\|.+:\d+)(\s+[AM|PM]+)?(.+)?/;
+    var str = "大败局II - 您在第 128-128 页的标注 | 添加于 2015年5月8日星期五 下午5:29:26对于企业家来说，成功的结局会有很多种，而失 败的下场则永远只有一个";
+    console.log(str.match(pattern));
+</script>
+</body>
+</html>

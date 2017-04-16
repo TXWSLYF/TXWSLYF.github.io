@@ -18,7 +18,7 @@ window.onload = function () {
                 deleteEmptyArr(annotationArr);                  //将数组中的空数组删除
                 for (j = 0; j < annotationArr.length; j++) {
                     var informations = annotationArr[j].match(pattern);
-                    console.log(informations);
+                    if (informations == null) continue;                            //如果这条字符串不能匹配，则直接跳到下一条字符串
                     if (informations[6] == undefined) continue;                   //如果注释的内容为空，则直接跳过该条注释
                     var annotationContainer = document.createElement("div");       //创建一个annotationContainer来容纳一条注释
                     annotationContainer.className = "annotationContainer";
@@ -53,11 +53,11 @@ window.onload = function () {
                             case 5:                                                                 //对第五个捕获型分组进行判断
                                 if (informations[5] != undefined) {                                 //如果其不等于空，则将其添加到时间信息后面
                                     time.innerHTML = "time：" + getTimeString(informations[4]) + informations[5];
-                                    time.innerHTML = time.innerHTML + "——————"+formatTimeString(getTimeString(informations[4]) + informations[5]);
+                                    time.innerHTML = time.innerHTML + "——————" + formatTimeString(getTimeString(informations[4]) + informations[5]);
                                     break;
                                 }
                                 else {
-                                    time.innerHTML = time.innerHTML +"——————"+ formatTimeString(getTimeString(informations[4]));
+                                    time.innerHTML = time.innerHTML + "——————" + formatTimeString(getTimeString(informations[4]));
                                     break;
                                 }
                             default:
