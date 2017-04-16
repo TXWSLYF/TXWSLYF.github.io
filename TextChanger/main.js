@@ -4,7 +4,7 @@
 window.onload = function () {
     var readFile = new FileReader();
     var fileInput = document.getElementById("getFile");
-    var pattern = /(.+)\((.+)\)[^\d]+(\d+(?:-\d+)?).+(\|.+:\d+)(\s+[AM|PM]+)?(.+)?/;          //用来匹配注释的正则表达式
+    var pattern = /(.+\))[^\d]+(\d+(?:-\d+)?).+(\|.+:\d+)(\s+[AM|PM]+)?(.+)?/;          //用来匹配注释的正则表达式
     var titleOl = document.getElementById("titleList");
     var titleList = []; //用来保存标题的数组
     fileInput.onchange = function () {
@@ -19,50 +19,48 @@ window.onload = function () {
                 for (j = 0; j < annotationArr.length; j++) {
                     var informations = annotationArr[j].match(pattern);
                     if (informations == null) continue;                            //如果这条字符串不能匹配，则直接跳到下一条字符串
-                    if (informations[6] == undefined) continue;                   //如果注释的内容为空，则直接跳过该条注释
+                    if (informations[5] == undefined) continue;                   //如果注释的内容为空，则直接跳过该条注释
                     var annotationContainer = document.createElement("div");       //创建一个annotationContainer来容纳一条注释
                     annotationContainer.className = "annotationContainer";
                     for (k = 1; k < informations.length; k++) {
                         switch (k) {
                             case 1:
                                 var title = document.createElement("h2");
-                                title.innerHTML = "title：" + "《" + informations[1].trim() + "》";
-                                if (titleList.indexOf("《" + informations[1].trim() + "》") == (-1)) {            //如果新的标题不存在于标题数组之中
-                                    titleList.push("《" + informations[1].trim() + "》");                    //将新的标题添加到标题数组之中
+                                title.innerHTML = "title：" + "《" + getTitle(informations[1]).trim() + "》";
+                                annotationContainer.appendChild(title);
+                                if (titleList.indexOf("《" + getTitle(informations[1]).trim() + "》") == (-1)) {            //如果新的标题不存在于标题数组之中
+                                    titleList.push("《" + getTitle(informations[1]).trim() + "》");                    //将新的标题添加到标题数组之中
                                     var li = document.createElement("li");                           //创建一个新的包含标题的li标签并且添加到列表当中
-                                    li.innerHTML = "《" + informations[1].trim() + "》";
+                                    li.innerHTML = "《" + getTitle(informations[1]).trim() + "》";
                                     titleOl.appendChild(li);
                                 }
-                                annotationContainer.appendChild(title);
-                                break;
-                            case 2:
                                 var author = document.createElement("div");
-                                author.innerHTML = "author：" + informations[2];
+                                author.innerHTML = "author：" + getAuthor(informations[1]);
                                 annotationContainer.appendChild(author);
                                 break;
-                            case 3:
+                            case 2:
                                 var position = document.createElement("div");
-                                position.innerHTML = "position：" + informations[3];
+                                position.innerHTML = "position：" + informations[2];
                                 annotationContainer.appendChild(position);
                                 break;
-                            case 4:
+                            case 3:
                                 var time = document.createElement("div");
-                                time.innerHTML = "time：" + getTimeString(informations[4]);            //对之前提取的时间信息进行进一步分析
+                                time.innerHTML = "time：" + getTimeString(informations[3]);            //对之前提取的时间信息进行进一步分析
                                 annotationContainer.appendChild(time);
                                 break;
-                            case 5:                                                                 //对第五个捕获型分组进行判断
-                                if (informations[5] != undefined) {                                 //如果其不等于空，则将其添加到时间信息后面
-                                    time.innerHTML = "time：" + getTimeString(informations[4]) + informations[5];
-                                    time.innerHTML = time.innerHTML + "——————" + formatTimeString(getTimeString(informations[4]) + informations[5]);
+                            case 4:                                                                 //对第五个捕获型分组进行判断
+                                if (informations[4] != undefined) {                                 //如果其不等于空，则将其添加到时间信息后面
+                                    time.innerHTML = "time：" + getTimeString(informations[3]) + informations[4];
+                                    time.innerHTML = time.innerHTML + "——————" + formatTimeString(getTimeString(informations[3]) + informations[4]);
                                     break;
                                 }
                                 else {
-                                    time.innerHTML = time.innerHTML + "——————" + formatTimeString(getTimeString(informations[4]));
+                                    time.innerHTML = time.innerHTML + "——————" + formatTimeString(getTimeString(informations[3]));
                                     break;
                                 }
                             default:
                                 var content = document.createElement("div");
-                                content.innerHTML = "content：" + informations[6];
+                                content.innerHTML = "content：" + informations[5];
                                 annotationContainer.appendChild(content);
                                 break;
                         }
@@ -83,6 +81,47 @@ function deleteEmptyArr(arr) {              //删除数组中的空数组
     }
 }
 
+function getTitle(str) {                    //考虑了包含作者的括号出现了括号的情况的处理函数
+    var count = 0;
+    var position = str.length - 1;
+    while (true) {
+        var i, j;
+        i = str.lastIndexOf(")", position);
+        j = str.lastIndexOf("(", position);
+        if (i > j) {
+            count++;
+            position = i - 1;
+        }
+        else {
+            count--;
+            position = j - 1;
+            if (count === 0) {
+                break;
+            }
+        }
+    }
+    return str.slice(0, position + 1);
+}
 
-
+function getAuthor(str) {
+    var count = 0;
+    var position = str.length - 1;
+    while (true) {
+        var i, j;
+        i = str.lastIndexOf(")", position);
+        j = str.lastIndexOf("(", position);
+        if (i > j) {
+            count++;
+            position = i - 1;
+        }
+        else {
+            count--;
+            position = j - 1;
+            if (count === 0) {
+                break;
+            }
+        }
+    }
+    return str.slice(position + 1);
+}
 
