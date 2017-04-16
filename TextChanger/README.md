@@ -54,7 +54,7 @@
 ## 参考到的资料
 1.一个在线的编码查询转换网站
 http://tool.chinaz.com/tools/unicode.aspx<br/>
-2.关于input type = "file" 标签的美化方法
-http://www.haorooms.com/post/css_input_uploadmh<br/>
+2.《JavaScript高级程序设计》<br/>
+3.《JavaScript语言精粹》<br/>
 ## 演示地址<br/>
 www.luyufeng.wang/TextChanger<br/>
