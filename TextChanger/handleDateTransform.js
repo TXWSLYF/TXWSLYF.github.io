@@ -21,7 +21,12 @@ function formatTimeString(str) {                      //格式化时间字符串
             }
         }
         else {
-            hour = (parseInt(timeContentArr[5]) + 12).toString();      //下午的话小时加12
+            if (parseInt(timeContentArr[5]) == "12") {                  //下午的话除了12点都加12个小时
+                hour = timeContentArr[5];
+            }
+            else {
+                hour = (parseInt(timeContentArr[5]) + 12).toString();
+            }
         }
         minute = timeContentArr[6];
         second = timeContentArr[7];
@@ -42,7 +47,12 @@ function formatTimeString(str) {                      //格式化时间字符串
             }
         }
         else {
-            hour = (parseInt(timeContentArr[5]) + 12).toString();
+            if (parseInt(timeContentArr[5]) == 12) {
+                hour = timeContentArr[5];
+            }
+            else {
+                hour = (parseInt(timeContentArr[5]) + 12).toString();
+            }
         }
         minute = timeContentArr[6];
         second = timeContentArr[7];
