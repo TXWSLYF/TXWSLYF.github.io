@@ -23,16 +23,16 @@ window.onload = function () {
                 title.innerHTML = "title：" + annotationList[i].title;
                 annotationContainer.appendChild(title);
                 var author = document.createElement("div");
-                author.innerHTML = "author：" + annotationList[i].author;
+                author.innerHTML = annotationList[i].author;
                 annotationContainer.appendChild(author);
                 var position = document.createElement("div");
-                position.innerHTML = "position：" + annotationList[i].position;
+                position.innerHTML = annotationList[i].position;
                 annotationContainer.appendChild(position);
                 var time = document.createElement("div");
-                time.innerHTML = "time：" + annotationList[i].time;
+                time.innerHTML = annotationList[i].time;
                 annotationContainer.appendChild(time);
                 var content = document.createElement("div");
-                content.innerHTML = "content：" + annotationList[i].content;
+                content.innerHTML = annotationList[i].content;
                 annotationContainer.appendChild(content);
                 annotationBox.appendChild(annotationContainer);
             }
@@ -111,16 +111,16 @@ window.onload = function () {
                                 title.innerHTML = "title：" + annotationList[i].title;
                                 annotationContainer.appendChild(title);
                                 var author = document.createElement("div");
-                                author.innerHTML = "author：" + annotationList[i].author;
+                                author.innerHTML = annotationList[i].author;
                                 annotationContainer.appendChild(author);
                                 var position = document.createElement("div");
-                                position.innerHTML = "position：" + annotationList[i].position;
+                                position.innerHTML = annotationList[i].position;
                                 annotationContainer.appendChild(position);
                                 var time = document.createElement("div");
-                                time.innerHTML = "time：" + annotationList[i].time;
+                                time.innerHTML = annotationList[i].time;
                                 annotationContainer.appendChild(time);
                                 var content = document.createElement("div");
-                                content.innerHTML = "content：" + annotationList[i].content;
+                                content.innerHTML = annotationList[i].content;
                                 annotationContainer.appendChild(content);
                                 annotationBox.appendChild(annotationContainer);
                             }
