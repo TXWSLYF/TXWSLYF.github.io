@@ -7,8 +7,36 @@ window.onload = function () {
     var pattern = /(.+\))[^\d]+(\d+(?:-\d+)?).+(\|.+:\d+)(\s+[AM|PM]+)?(.+)?/;          //用来匹配注释的正则表达式
     var titleOl = document.getElementById("titleList");
     var titleList = []; //用来保存标题的数组
+    var annotationList = []; //用来保存所有注释的数组
     fileInput.onchange = function () {
         var i, j, k;
+        var showAll = document.createElement("li");             //创建的可以显示所有注释的标签
+        showAll.innerHTML = "显示所有注释";
+        titleOl.appendChild(showAll);
+        showAll.onclick = function () {
+            var annotationBox = document.getElementById("annotationBox");               //先将annotationBox里边的内容全部删除
+            annotationBox.innerHTML = "";
+            for (i = 0; i < annotationList.length; i++) {
+                var annotationContainer = document.createElement("div");       //创建一个annotationContainer来容纳一条注释
+                annotationContainer.className = "annotationContainer";
+                var title = document.createElement("h2");
+                title.innerHTML = "title：" + annotationList[i].title;
+                annotationContainer.appendChild(title);
+                var author = document.createElement("div");
+                author.innerHTML = "author：" + annotationList[i].author;
+                annotationContainer.appendChild(author);
+                var position = document.createElement("div");
+                position.innerHTML = "position：" + annotationList[i].position;
+                annotationContainer.appendChild(position);
+                var time = document.createElement("div");
+                time.innerHTML = "time：" + annotationList[i].time;
+                annotationContainer.appendChild(time);
+                var content = document.createElement("div");
+                content.innerHTML = "content：" + annotationList[i].content;
+                annotationContainer.appendChild(content);
+                annotationBox.appendChild(annotationContainer);
+            }
+        };
         for (i = 0; i < fileInput.files.length; i++) {
             var file = fileInput.files[i];
             readFile.readAsText(file);
@@ -65,63 +93,95 @@ window.onload = function () {
                                 break;
                         }
                     }
-                    document.body.appendChild(annotationContainer);
+                    var annotation = {};
+                    annotation.title = "《" + getTitle(informations[1]).trim() + "》";
+                    annotation.author = author.innerHTML;
+                    annotation.position = position.innerHTML;
+                    annotation.time = time.innerHTML;
+                    annotation.content = content.innerHTML;
+                    annotationList.push(annotation);
+                    li.onclick = function () {
+                        var annotationBox = document.getElementById("annotationBox");                    //先将annotationBox里边的内容全部删除
+                        annotationBox.innerHTML = "";
+                        for (i = 0; i < annotationList.length; i++) {
+                            if (annotationList[i].title == this.innerHTML) {
+                                var annotationContainer = document.createElement("div");       //创建一个annotationContainer来容纳一条注释
+                                annotationContainer.className = "annotationContainer";
+                                var title = document.createElement("h2");
+                                title.innerHTML = "title：" + annotationList[i].title;
+                                annotationContainer.appendChild(title);
+                                var author = document.createElement("div");
+                                author.innerHTML = "author：" + annotationList[i].author;
+                                annotationContainer.appendChild(author);
+                                var position = document.createElement("div");
+                                position.innerHTML = "position：" + annotationList[i].position;
+                                annotationContainer.appendChild(position);
+                                var time = document.createElement("div");
+                                time.innerHTML = "time：" + annotationList[i].time;
+                                annotationContainer.appendChild(time);
+                                var content = document.createElement("div");
+                                content.innerHTML = "content：" + annotationList[i].content;
+                                annotationContainer.appendChild(content);
+                                annotationBox.appendChild(annotationContainer);
+                            }
+                        }
+                    };
+                    document.getElementById("annotationBox").appendChild(annotationContainer);
                 }
             }
         }
-    }
-};
-
-function deleteEmptyArr(arr) {              //删除数组中的空数组
-    var i;
-    for (i = 0; i < arr.length; i++) {
-        if (arr[i] == "") {
-            arr.splice(i, 1);
-        }
-    }
+    };
 }
-
-function getTitle(str) {                    //考虑了包含作者的括号出现了括号的情况的处理函数
-    var count = 0;
-    var position = str.length - 1;
-    while (true) {
-        var i, j;
-        i = str.lastIndexOf(")", position);
-        j = str.lastIndexOf("(", position);
-        if (i > j) {
-            count++;
-            position = i - 1;
-        }
-        else {
-            count--;
-            position = j - 1;
-            if (count === 0) {
-                break;
+    function deleteEmptyArr(arr) {              //删除数组中的空数组
+        var i;
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i] == "") {
+                arr.splice(i, 1);
             }
         }
     }
-    return str.slice(0, position + 1);
-}
 
-function getAuthor(str) {
-    var count = 0;
-    var position = str.length - 1;
-    while (true) {
-        var i, j;
-        i = str.lastIndexOf(")", position);
-        j = str.lastIndexOf("(", position);
-        if (i > j) {
-            count++;
-            position = i - 1;
-        }
-        else {
-            count--;
-            position = j - 1;
-            if (count === 0) {
-                break;
+    function getTitle(str) {                    //考虑了包含作者的括号出现了括号的情况的处理函数
+        var count = 0;
+        var position = str.length - 1;
+        while (true) {
+            var i, j;
+            i = str.lastIndexOf(")", position);
+            j = str.lastIndexOf("(", position);
+            if (i > j) {
+                count++;
+                position = i - 1;
+            }
+            else {
+                count--;
+                position = j - 1;
+                if (count === 0) {
+                    break;
+                }
             }
         }
+        return str.slice(0, position + 1);
     }
-    return str.slice(position + 1);
-}
+
+    function getAuthor(str) {
+        var count = 0;
+        var position = str.length - 1;
+        while (true) {
+            var i, j;
+            i = str.lastIndexOf(")", position);
+            j = str.lastIndexOf("(", position);
+            if (i > j) {
+                count++;
+                position = i - 1;
+            }
+            else {
+                count--;
+                position = j - 1;
+                if (count === 0) {
+                    break;
+                }
+            }
+        }
+        return str.slice(position + 1);
+    }
 
