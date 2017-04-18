@@ -38,7 +38,7 @@ window.onload = function () {
                     var timeString;                                                     //未格式化的时间信息
                     var formatTime;                                                    //格式化的时间信息
                     var content;         //用来保存注释内容
-                    information = annotationArr[j].match(pattern);
+                    information = annotationArr[j].trim().match(pattern);             //为了防止内容全是空格的问题，所以添加了trim()函数
                     if (information == null) continue;                            //如果这条字符串不能匹配，则直接跳到下一条字符串
                     if (information[5] == undefined) continue;                   //如果注释的内容为空，则直接跳过该条注释
                     for (k = 1; k < information.length; k++) {                //从捕获的第一个分组开始判断

@@ -3,7 +3,12 @@
  */
 function formatTimeString(str) {                      //格式化时间字符串，转化为标准的时间格式 YYYY-MM-DD hh:mm:ss
     var timePattern;
-    var year, month, day, hour, minute, second;
+    var year;
+    var month;
+    var day;
+    var hour;
+    var minute;
+    var second;
     var timeContentArr = [];
     var outStr = '';
     if (str.indexOf('年') != (-1)) {                     //分中文日期字符串和英文日期字符串两种情况来考虑
