@@ -12,10 +12,11 @@ var annotationList = [];                                                        
 window.onload = function () {
     fileInput.onchange = function () {                     //上传文件后触发的事件
         var i;                                             //定义的循环计数的变量
-        var showAll = document.createElement('li');       //单独创建一个可以显示所有注释的标签
+        var showAll;
+        showAll = document.createElement('li');       //单独创建一个可以显示所有注释的标签
         showAll.innerHTML = '显示所有注释';
-        titleList.appendChild(showAll);
         showAll.onclick = selectAllAnnotation;         //为showAll标签绑定点击事件
+        titleList.appendChild(showAll);
         for (i = 0; i < fileInput.files.length; i++) {
             var file = fileInput.files[i];
             readFile.readAsText(file);                 //以文本方式读取文件
@@ -30,14 +31,13 @@ window.onload = function () {
                     var k;
                     var information;                                                   //用来保存注释信息
                     var annotation = {};                                                  //用来保存单条注释信息
-                    var title;
-                    var author;
-                    var position;
-                    var time;
+                    var title;          //用来保存标题
+                    var author;         //用来保存作者
+                    var position;       //用来保存位置信息
+                    var time;           //完整的时间信息
                     var timeString;                                                     //未格式化的时间信息
                     var formatTime;                                                    //格式化的时间信息
-                    var content;
-                    var li;
+                    var content;         //用来保存注释内容
                     information = annotationArr[j].match(pattern);
                     if (information == null) continue;                            //如果这条字符串不能匹配，则直接跳到下一条字符串
                     if (information[5] == undefined) continue;                   //如果注释的内容为空，则直接跳过该条注释
@@ -47,9 +47,11 @@ window.onload = function () {
                                 title = '《' + getTitle(information[1]).trim() + '》';
                                 author = getAuthor(information[1]);
                                 if (titleArr.indexOf(title) == (-1)) {             //如果新的标题不存在于标题数组之中
+                                    var li;
                                     titleArr.push(title);                       //将新的标题添加到标题数组之中
                                     li = document.createElement('li');         //创建一个新的包含标题的li标签并且添加到列表当中
                                     li.innerHTML = title;
+                                    li.onclick = selectMatchedAnnotation;    //为其添加点击事件    
                                     titleList.appendChild(li);              //将新标题添加到列表当中
                                 }
                                 break;
@@ -58,19 +60,16 @@ window.onload = function () {
                                 break;
                             case 3:                                                           //时间信息保存在第三个捕获型分组之中
                                 timeString = getTimeString(information[3]);                        //对提取的时间信息进行进一步分析
-                                time = timeString;
                                 break;
                             case 4:
                                 if (information[4] != undefined) {                                 //第四个捕获型分组是用来捕获英文信息的上午或者下午的信息的
                                     formatTime = formatTimeString(timeString + information[4]);
-                                    time += '——————' + formatTime;
-                                    break;
                                 }
                                 else {
                                     formatTime = formatTimeString(timeString);
-                                    time += '——————' + formatTime;
-                                    break;
                                 }
+                                time = timeString + '——————' + formatTime;
+                                break;
                             default:
                                 content = information[5];
                                 break;
@@ -82,10 +81,9 @@ window.onload = function () {
                     annotation.time = time;
                     annotation.content = content;
                     annotationList.push(annotation);                    //将该条信息添加到注释数组中
-                    li.onclick = selectMatchedAnnotation;
                 }
                 selectAllAnnotation();
-            }
+            };
         }
     };
 };
