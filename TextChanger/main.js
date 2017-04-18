@@ -15,7 +15,7 @@ window.onload = function () {
         var showAll;
         showAll = document.createElement('li');       //单独创建一个可以显示所有注释的标签
         showAll.innerHTML = '显示所有注释';
-        showAll.onclick = selectAllAnnotation;         //为showAll标签绑定点击事件
+        showAll.onclick = selectAnnotation;         //为showAll标签绑定点击事件
         titleList.appendChild(showAll);
         for (i = 0; i < fileInput.files.length; i++) {
             var file = fileInput.files[i];
@@ -51,7 +51,7 @@ window.onload = function () {
                                     titleArr.push(title);                       //将新的标题添加到标题数组之中
                                     li = document.createElement('li');         //创建一个新的包含标题的li标签并且添加到列表当中
                                     li.innerHTML = title;
-                                    li.onclick = selectMatchedAnnotation;    //为其添加点击事件    
+                                    li.onclick = selectAnnotation;    //为其添加点击事件    
                                     titleList.appendChild(li);              //将新标题添加到列表当中
                                 }
                                 break;
@@ -82,7 +82,7 @@ window.onload = function () {
                     annotation.content = content;
                     annotationList.push(annotation);                    //将该条信息添加到注释数组中
                 }
-                selectAllAnnotation();
+                selectAnnotation.apply(showAll);                 //以apply方式调用一次selectionAnnotation函数，将showAll标签作为参数，所以一开始可以显示所有注释
             };
         }
     };
@@ -141,7 +141,7 @@ function getAuthor(str) {
     return str.slice(position + 1);
 }
 
-function selectAllAnnotation() {
+function selectAnnotation() {
     var i;
     var annotationContainer;
     var titleContainer;
@@ -151,16 +151,33 @@ function selectAllAnnotation() {
     var contentContainer;
     annotationBox.innerHTML = '';                                         //先将annotationBox里边的内容全部删除
     for (i = 0; i < annotationList.length; i++) {
-        titleContainer = document.createElement('h2');
-        authorContainer = document.createElement('div');
-        positionContainer = document.createElement('div');
-        timeContainer = document.createElement('div');
-        contentContainer = document.createElement('div');
-        titleContainer.innerHTML = 'title：' + annotationList[i].title;
-        authorContainer.innerHTML = 'author：' + annotationList[i].author;
-        positionContainer.innerHTML = 'position：' + annotationList[i].position;
-        timeContainer.innerHTML = 'time：' + annotationList[i].time;
-        contentContainer.innerHTML = 'content：' + annotationList[i].content;
+        if (this.innerHTML == '显示所有注释') {                        //如果li标签的内容为"显示所有注释"，则将所有注释显示出来
+            titleContainer = document.createElement('h2');
+            authorContainer = document.createElement('div');
+            positionContainer = document.createElement('div');
+            timeContainer = document.createElement('div');
+            contentContainer = document.createElement('div');
+            titleContainer.innerHTML = 'title：' + annotationList[i].title;
+            authorContainer.innerHTML = 'author：' + annotationList[i].author;
+            positionContainer.innerHTML = 'position：' + annotationList[i].position;
+            timeContainer.innerHTML = 'time：' + annotationList[i].time;
+            contentContainer.innerHTML = 'content：' + annotationList[i].content;
+        }
+        else if (this.innerHTML != annotationList[i].title) {
+            continue;
+        }
+        else {
+            titleContainer = document.createElement('h2');
+            authorContainer = document.createElement('div');
+            positionContainer = document.createElement('div');
+            timeContainer = document.createElement('div');
+            contentContainer = document.createElement('div');
+            titleContainer.innerHTML = 'title：' + annotationList[i].title;
+            authorContainer.innerHTML = 'author：' + annotationList[i].author;
+            positionContainer.innerHTML = 'position：' + annotationList[i].position;
+            timeContainer.innerHTML = 'time：' + annotationList[i].time;
+            contentContainer.innerHTML = 'content：' + annotationList[i].content;
+        }
         annotationContainer = document.createElement('div');       //创建一个annotationContainer来容纳一条注释
         annotationContainer.className = 'annotationContainer';
         annotationContainer.appendChild(titleContainer);
@@ -172,36 +189,4 @@ function selectAllAnnotation() {
     }
 }
 
-function selectMatchedAnnotation() {
-    var i;
-    var matchedTitle = this.innerHTML;
-    var annotationContainer;
-    var titleContainer;
-    var authorContainer;
-    var positionContainer;
-    var timeContainer;
-    var contentContainer;
-    annotationBox.innerHTML = '';                   //先将annotationBox里边的内容全部删除
-    for (i = 0; i < annotationList.length; i++) {
-        if (annotationList[i].title == matchedTitle) {
-            titleContainer = document.createElement('h2');
-            authorContainer = document.createElement('div');
-            positionContainer = document.createElement('div');
-            timeContainer = document.createElement('div');
-            contentContainer = document.createElement('div');
-            titleContainer.innerHTML = 'title：' + annotationList[i].title;
-            authorContainer.innerHTML = 'author：' + annotationList[i].author;
-            positionContainer.innerHTML = 'position：' + annotationList[i].position;
-            timeContainer.innerHTML = 'time：' + annotationList[i].time;
-            contentContainer.innerHTML = 'content：' + annotationList[i].content;
-            annotationContainer = document.createElement('div');       //创建一个annotationContainer来容纳一条注释
-            annotationContainer.className = 'annotationContainer';
-            annotationContainer.appendChild(titleContainer);
-            annotationContainer.appendChild(authorContainer);
-            annotationContainer.appendChild(positionContainer);
-            annotationContainer.appendChild(timeContainer);
-            annotationContainer.appendChild(contentContainer);
-            annotationBox.appendChild(annotationContainer);
-        }
-    }
-}
+
