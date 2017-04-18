@@ -140,13 +140,16 @@ window.onload = function () {
                             case 4:
                                 
                                 if (information[4] != undefined) {                                 
-                                    formatTime = formatTimeString(timeString + information[4]);
+                                    timeString = timeString + information[4];
+                                    formatTime = formatTimeString(timeString);
+                                    
                                 }
                                 else {
                                     formatTime = formatTimeString(timeString);
                                 }
                                 time = timeString + '——————' + formatTime;
                                 break;
+                            
                             //第五个捕获型分组保存着注释的内容
                             default:
                                 
