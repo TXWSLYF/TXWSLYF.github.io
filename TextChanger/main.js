@@ -43,7 +43,7 @@ window.onload = function () {
 
             //以文本方式读取文件
             readFile.readAsText(file);
-            
+
             readFile.onload = function () {
                 var j;
                 var result;
@@ -56,11 +56,11 @@ window.onload = function () {
                 annotationArr = result.split(/={7,}/);
 
                 //将数组中的空数组删除
-                deleteEmptyArr(annotationArr);     
-                
+                deleteEmptyArr(annotationArr);
+
                 for (j = 0; j < annotationArr.length; j++) {
                     var k;
-                    
+
                     //用来保存注释信息
                     var information;
 
@@ -92,10 +92,10 @@ window.onload = function () {
                     information = annotationArr[j].trim().match(pattern);
 
                     //如果这条字符串不能匹配，则直接跳到下一条字符串
-                    if (information == null) continue;
+                    if (information === null) continue;
 
                     //如果注释的内容为空，则直接跳过该条注释
-                    if (information[5] == undefined) continue;
+                    if (information[5] === undefined) continue;
 
                     //从捕获的第一个分组开始判断
                     for (k = 1; k < information.length; k++) {
@@ -105,26 +105,26 @@ window.onload = function () {
                                 author = getAuthor(information[1]);
 
                                 //判断新的标题是否存在于数组中，不存就就添加入数组
-                                if (titleArr.indexOf(title) == (-1)) {             
+                                if (titleArr.indexOf(title) === (-1)) {
                                     var li;
 
                                     //将新的标题添加到标题数组之中
                                     titleArr.push(title);
 
                                     //创建一个新的包含标题的li标签并且添加到列表当中
-                                    li = document.createElement('li');         
+                                    li = document.createElement('li');
                                     li.innerHTML = title;
 
                                     //为其添加点击事件    
                                     li.onclick = selectAnnotation;
 
                                     //将新标题添加到列表当中
-                                    titleList.appendChild(li);              
+                                    titleList.appendChild(li);
                                 }
                                 break;
 
                             //位置信息保存在第二个捕获型分组中
-                            case 2:                  
+                            case 2:
                                 position = information[2];
                                 break;
 
@@ -132,41 +132,41 @@ window.onload = function () {
                             case 3:
 
                                 //对提取的时间信息进行进一步分析
-                                timeString = getTimeString(information[3]);          
-                                
+                                timeString = getTimeString(information[3]);
+
                                 break;
 
                             //第四个捕获型分组是用来捕获英文信息的上午或者下午
                             case 4:
-                                
-                                if (information[4] != undefined) {                                 
+
+                                if (information[4] !== undefined) {
                                     timeString = timeString + information[4];
                                     formatTime = formatTimeString(timeString);
-                                    
+
                                 }
                                 else {
                                     formatTime = formatTimeString(timeString);
                                 }
                                 time = timeString + '——————' + formatTime;
                                 break;
-                            
+
                             //第五个捕获型分组保存着注释的内容
                             default:
-                                
+
                                 content = information[5];
                                 break;
                         }
                     }
 
                     //将信息都保存起来
-                    annotation.title = title;                                
+                    annotation.title = title;
                     annotation.author = author;
                     annotation.position = position;
                     annotation.time = time;
                     annotation.content = content;
 
                     //将该条信息添加到注释数组中
-                    annotationList.push(annotation);                    
+                    annotationList.push(annotation);
                 }
 
                 //以apply方式调用一次selectionAnnotation函数，将showAll标签作为参数，所以一开始可以显示所有注释
@@ -177,21 +177,22 @@ window.onload = function () {
 };
 
 //删除数组中的空数组
-function deleteEmptyArr(arr) {              
+function deleteEmptyArr(arr) {
     var i;
     for (i = 0; i < arr.length; i++) {
-        if (arr[i] == '') {
+        if (arr[i] === '') {
             arr.splice(i, 1);
         }
     }
 }
 
 //考虑了包含作者的括号出现了括号的情况的处理函数
-function getTitle(str) {                    
+function getTitle(str) {
     var count = 0;
     var position = str.length - 1;
     while (true) {
-        var i, j;
+        var i;
+        var j;
         i = str.lastIndexOf(')', position);
         j = str.lastIndexOf('(', position);
         if (i > j) {
@@ -213,7 +214,8 @@ function getAuthor(str) {
     var count = 0;
     var position = str.length - 1;
     while (true) {
-        var i, j;
+        var i;
+        var j;
         i = str.lastIndexOf(')', position);
         j = str.lastIndexOf('(', position);
         if (i > j) {
@@ -239,14 +241,15 @@ function selectAnnotation() {
     var positionContainer;
     var timeContainer;
     var contentContainer;
+    var selectTitle = this.innerHTML;
 
     //先将annotationBox里边的内容全部删除
-    annotationBox.innerHTML = '';                                         
-    
+    annotationBox.innerHTML = '';
+
     for (i = 0; i < annotationList.length; i++) {
 
         //如果li标签的内容为"显示所有注释"，则将所有注释显示出来
-        if (this.innerHTML == '显示所有注释') {
+        if (selectTitle === '显示所有注释') {
             titleContainer = document.createElement('h2');
             authorContainer = document.createElement('div');
             positionContainer = document.createElement('div');
@@ -258,9 +261,9 @@ function selectAnnotation() {
             timeContainer.innerHTML = 'time：' + annotationList[i].time;
             contentContainer.innerHTML = 'content：' + annotationList[i].content;
         }
-            
+
         //如果不是所选的标题的注释，则直接跳过这条注释    
-        else if (this.innerHTML != annotationList[i].title) {
+        else if (selectTitle !== annotationList[i].title) {
             continue;
         }
         else {
@@ -277,8 +280,8 @@ function selectAnnotation() {
         }
 
         //创建一个annotationContainer来容纳一条注释
-        annotationContainer = document.createElement('div');       
-        
+        annotationContainer = document.createElement('div');
+
         annotationContainer.className = 'annotationContainer';
         annotationContainer.appendChild(titleContainer);
         annotationContainer.appendChild(authorContainer);
