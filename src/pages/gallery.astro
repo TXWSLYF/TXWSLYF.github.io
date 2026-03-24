@@ -1,0 +1,173 @@
+---
+import { SITE } from "@config";
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+
+import galleryData from "@content/gallery/gallery.json";
+
+type GalleryItem = {
+  originalName: string;
+  originalUrl: string;
+  thumbnailUrl: string;
+  width: number | null;
+  height: number | null;
+  mtimeMs?: number;
+};
+
+const items: GalleryItem[] = Array.isArray(galleryData?.items)
+  ? galleryData.items
+  : [];
+
+items.sort((a, b) => (b.mtimeMs ?? 0) - (a.mtimeMs ?? 0));
+---
+
+<Layout title={`Gallery | ${SITE.title}`}>
+  <Header activeNav="gallery" />
+  <Breadcrumbs />
+
+  <main id="main-content">
+    <div
+      id="gallery"
+      class="prose mb-28 max-w-3xl prose-img:rounded-none prose-img:border-0"
+    >
+      <h1 class="text-2xl tracking-wider sm:text-3xl">Gallery</h1>
+
+      <div
+        id="gallery-lightgallery-root"
+        class="gallery-masonry"
+        aria-label="gallery"
+      >
+        {
+          items.length === 0 ? (
+            <p class="empty-hint">
+              当前还没有照片数据。请先运行本地的 `gallery:sync`
+              命令生成配置并上传。
+            </p>
+          ) : (
+            items.map(item => (
+              <a
+                class="gallery-item"
+                href={item.originalUrl}
+                data-thumb={item.thumbnailUrl}
+                aria-label={item.originalName}
+                title={item.originalName}
+                data-sub-html={item.originalName}
+              >
+                <div
+                  class="gallery-thumb"
+                  style={`aspect-ratio: ${
+                    item.width && item.height
+                      ? `${item.width} / ${item.height}`
+                      : "1 / 1"
+                  }`}
+                >
+                  <img
+                    src={item.thumbnailUrl}
+                    alt={item.originalName}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </a>
+            ))
+          )
+        }
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+
+  <style>
+    #main-content {
+      @apply mx-auto w-full max-w-5xl px-4 pb-12;
+    }
+
+    .empty-hint {
+      @apply mt-6 italic opacity-70;
+    }
+
+    /* 移动端起双列；大屏三列 */
+    .gallery-masonry {
+      column-count: 2;
+      column-gap: 0.75rem;
+    }
+
+    @media (min-width: 1024px) {
+      .gallery-masonry {
+        column-count: 3;
+        column-gap: 1rem;
+      }
+    }
+
+    .gallery-item {
+      display: block;
+      margin-bottom: 1rem;
+      break-inside: avoid;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+
+    .gallery-thumb {
+      width: 100%;
+      overflow: hidden;
+      box-sizing: border-box;
+      border-radius: 0;
+      border: 0;
+      background: transparent;
+      position: relative;
+    }
+
+    .gallery-thumb img {
+      width: 100%;
+      object-fit: cover;
+      display: block;
+      position: absolute;
+      inset: 0;
+      border-radius: 0;
+    }
+  </style>
+
+  <script>
+    import lightGallery from "lightgallery";
+    import lgThumbnail from "lightgallery/plugins/thumbnail";
+    import lgZoom from "lightgallery/plugins/zoom";
+    import "lightgallery/css/lightgallery.css";
+    import "lightgallery/css/lg-thumbnail.css";
+    import "lightgallery/css/lg-zoom.css";
+
+    function initLightGallery() {
+      const el = document.getElementById("gallery-lightgallery-root");
+      if (!el) return;
+      if (el.dataset.lgInitialized === "true") return;
+      const links = el.querySelectorAll("a.gallery-item");
+      if (links.length === 0) return;
+
+      el.dataset.lgInitialized = "true";
+      lightGallery(el, {
+        plugins: [lgThumbnail, lgZoom],
+        selector: "a.gallery-item",
+        speed: 400,
+        download: false,
+        /* 底部缩略图条（官方 Thumbnail 插件） */
+        thumbnail: true,
+        animateThumb: true,
+        currentPagerPosition: "middle",
+        alignThumbnails: "middle",
+        thumbWidth: 88,
+        thumbHeight: "64px",
+        thumbMargin: 6,
+        enableThumbDrag: true,
+        enableThumbSwipe: true,
+      });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initLightGallery);
+    } else {
+      initLightGallery();
+    }
+  </script>
+</Layout>

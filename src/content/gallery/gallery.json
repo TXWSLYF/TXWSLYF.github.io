@@ -1,0 +1,402 @@
+{
+  "generatedAt": "2026-03-24T02:12:45.775Z",
+  "thumbConfig": {
+    "thumbWidth": 1600,
+    "thumbFormat": "webp",
+    "r2OriginalPrefix": "gallery/originals",
+    "r2ThumbPrefix": "gallery/thumbs"
+  },
+  "items": [
+    {
+      "originalName": "DSC07141.jpg",
+      "relativePath": "DSC07141.jpg",
+      "width": 4884,
+      "height": 3256,
+      "mtimeMs": 1774317582734.4705,
+      "size": 7974704,
+      "thumbConfigKey": "1600-webp-gallery/thumbs",
+      "thumbConfig": {
+        "thumbWidth": 1600,
+        "thumbFormat": "webp"
+      },
+      "originalKey": "gallery/originals/DSC07141.jpg",
+      "thumbnailKey": "gallery/thumbs/1600w/DSC07141.webp",
+      "originalUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/originals/DSC07141.jpg",
+      "thumbnailUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/thumbs/1600w/DSC07141.webp"
+    },
+    {
+      "originalName": "DSC07022.jpg",
+      "relativePath": "DSC07022.jpg",
+      "width": 4218,
+      "height": 2812,
+      "mtimeMs": 1774317548402.494,
+      "size": 4495933,
+      "thumbConfigKey": "1600-webp-gallery/thumbs",
+      "thumbConfig": {
+        "thumbWidth": 1600,
+        "thumbFormat": "webp"
+      },
+      "originalKey": "gallery/originals/DSC07022.jpg",
+      "thumbnailKey": "gallery/thumbs/1600w/DSC07022.webp",
+      "originalUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/originals/DSC07022.jpg",
+      "thumbnailUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/thumbs/1600w/DSC07022.webp"
+    },
+    {
+      "originalName": "DSC06571.JPG",
+      "relativePath": "DSC06571.JPG",
+      "width": 4262,
+      "height": 2841,
+      "mtimeMs": 1774317548389.0464,
+      "size": 9341349,
+      "thumbConfigKey": "1600-webp-gallery/thumbs",
+      "thumbConfig": {
+        "thumbWidth": 1600,
+        "thumbFormat": "webp"
+      },
+      "originalKey": "gallery/originals/DSC06571.JPG",
+      "thumbnailKey": "gallery/thumbs/1600w/DSC06571.webp",
+      "originalUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/originals/DSC06571.JPG",
+      "thumbnailUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/thumbs/1600w/DSC06571.webp"
+    },
+    {
+      "originalName": "DSC06465.JPG",
+      "relativePath": "DSC06465.JPG",
+      "width": 4048,
+      "height": 2699,
+      "mtimeMs": 1774317548357.1338,
+      "size": 7240341,
+      "thumbConfigKey": "1600-webp-gallery/thumbs",
+      "thumbConfig": {
+        "thumbWidth": 1600,
+        "thumbFormat": "webp"
+      },
+      "originalKey": "gallery/originals/DSC06465.JPG",
+      "thumbnailKey": "gallery/thumbs/1600w/DSC06465.webp",
+      "originalUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/originals/DSC06465.JPG",
+      "thumbnailUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/thumbs/1600w/DSC06465.webp"
+    },
+    {
+      "originalName": "DSC05734.JPG",
+      "relativePath": "DSC05734.JPG",
+      "width": 5812,
+      "height": 3875,
+      "mtimeMs": 1774317548326.6262,
+      "size": 13446849,
+      "thumbConfigKey": "1600-webp-gallery/thumbs",
+      "thumbConfig": {
+        "thumbWidth": 1600,
+        "thumbFormat": "webp"
+      },
+      "originalKey": "gallery/originals/DSC05734.JPG",
+      "thumbnailKey": "gallery/thumbs/1600w/DSC05734.webp",
+      "originalUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/originals/DSC05734.JPG",
+      "thumbnailUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/thumbs/1600w/DSC05734.webp"
+    },
+    {
+      "originalName": "DSC05390.JPG",
+      "relativePath": "DSC05390.JPG",
+      "width": 6232,
+      "height": 4155,
+      "mtimeMs": 1774317548302.9119,
+      "size": 14675991,
+      "thumbConfigKey": "1600-webp-gallery/thumbs",
+      "thumbConfig": {
+        "thumbWidth": 1600,
+        "thumbFormat": "webp"
+      },
+      "originalKey": "gallery/originals/DSC05390.JPG",
+      "thumbnailKey": "gallery/thumbs/1600w/DSC05390.webp",
+      "originalUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/originals/DSC05390.JPG",
+      "thumbnailUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/thumbs/1600w/DSC05390.webp"
+    },
+    {
+      "originalName": "DSC05389.JPG",
+      "relativePath": "DSC05389.JPG",
+      "width": 6157,
+      "height": 4105,
+      "mtimeMs": 1774317548286.5034,
+      "size": 14667954,
+      "thumbConfigKey": "1600-webp-gallery/thumbs",
+      "thumbConfig": {
+        "thumbWidth": 1600,
+        "thumbFormat": "webp"
+      },
+      "originalKey": "gallery/originals/DSC05389.JPG",
+      "thumbnailKey": "gallery/thumbs/1600w/DSC05389.webp",
+      "originalUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/originals/DSC05389.JPG",
+      "thumbnailUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/thumbs/1600w/DSC05389.webp"
+    },
+    {
+      "originalName": "DSC05379.JPG",
+      "relativePath": "DSC05379.JPG",
+      "width": 5840,
+      "height": 4672,
+      "mtimeMs": 1774317548271.0017,
+      "size": 15723914,
+      "thumbConfigKey": "1600-webp-gallery/thumbs",
+      "thumbConfig": {
+        "thumbWidth": 1600,
+        "thumbFormat": "webp"
+      },
+      "originalKey": "gallery/originals/DSC05379.JPG",
+      "thumbnailKey": "gallery/thumbs/1600w/DSC05379.webp",
+      "originalUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/originals/DSC05379.JPG",
+      "thumbnailUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/thumbs/1600w/DSC05379.webp"
+    },
+    {
+      "originalName": "DSC05358.JPG",
+      "relativePath": "DSC05358.JPG",
+      "width": 4173,
+      "height": 2782,
+      "mtimeMs": 1774317548242.3784,
+      "size": 8013860,
+      "thumbConfigKey": "1600-webp-gallery/thumbs",
+      "thumbConfig": {
+        "thumbWidth": 1600,
+        "thumbFormat": "webp"
+      },
+      "originalKey": "gallery/originals/DSC05358.JPG",
+      "thumbnailKey": "gallery/thumbs/1600w/DSC05358.webp",
+      "originalUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/originals/DSC05358.JPG",
+      "thumbnailUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/thumbs/1600w/DSC05358.webp"
+    },
+    {
+      "originalName": "DSC05058.JPG",
+      "relativePath": "DSC05058.JPG",
+      "width": 3061,
+      "height": 2041,
+      "mtimeMs": 1774317548225.4846,
+      "size": 4541418,
+      "thumbConfigKey": "1600-webp-gallery/thumbs",
+      "thumbConfig": {
+        "thumbWidth": 1600,
+        "thumbFormat": "webp"
+      },
+      "originalKey": "gallery/originals/DSC05058.JPG",
+      "thumbnailKey": "gallery/thumbs/1600w/DSC05058.webp",
+      "originalUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/originals/DSC05058.JPG",
+      "thumbnailUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/thumbs/1600w/DSC05058.webp"
+    },
+    {
+      "originalName": "DSC04442.JPG",
+      "relativePath": "DSC04442.JPG",
+      "width": 2964,
+      "height": 3705,
+      "mtimeMs": 1774317548205.055,
+      "size": 7336273,
+      "thumbConfigKey": "1600-webp-gallery/thumbs",
+      "thumbConfig": {
+        "thumbWidth": 1600,
+        "thumbFormat": "webp"
+      },
+      "originalKey": "gallery/originals/DSC04442.JPG",
+      "thumbnailKey": "gallery/thumbs/1600w/DSC04442.webp",
+      "originalUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/originals/DSC04442.JPG",
+      "thumbnailUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/thumbs/1600w/DSC04442.webp"
+    },
+    {
+      "originalName": "DSC03743.JPG",
+      "relativePath": "DSC03743.JPG",
+      "width": 5600,
+      "height": 3733,
+      "mtimeMs": 1774317548194.8757,
+      "size": 8316929,
+      "thumbConfigKey": "1600-webp-gallery/thumbs",
+      "thumbConfig": {
+        "thumbWidth": 1600,
+        "thumbFormat": "webp"
+      },
+      "originalKey": "gallery/originals/DSC03743.JPG",
+      "thumbnailKey": "gallery/thumbs/1600w/DSC03743.webp",
+      "originalUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/originals/DSC03743.JPG",
+      "thumbnailUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/thumbs/1600w/DSC03743.webp"
+    },
+    {
+      "originalName": "DSC03079.JPG",
+      "relativePath": "DSC03079.JPG",
+      "width": 3960,
+      "height": 2640,
+      "mtimeMs": 1774317548180.7358,
+      "size": 7058343,
+      "thumbConfigKey": "1600-webp-gallery/thumbs",
+      "thumbConfig": {
+        "thumbWidth": 1600,
+        "thumbFormat": "webp"
+      },
+      "originalKey": "gallery/originals/DSC03079.JPG",
+      "thumbnailKey": "gallery/thumbs/1600w/DSC03079.webp",
+      "originalUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/originals/DSC03079.JPG",
+      "thumbnailUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/thumbs/1600w/DSC03079.webp"
+    },
+    {
+      "originalName": "DSC01630.JPG",
+      "relativePath": "DSC01630.JPG",
+      "width": 2501,
+      "height": 1667,
+      "mtimeMs": 1774317548167.2925,
+      "size": 3083804,
+      "thumbConfigKey": "1600-webp-gallery/thumbs",
+      "thumbConfig": {
+        "thumbWidth": 1600,
+        "thumbFormat": "webp"
+      },
+      "originalKey": "gallery/originals/DSC01630.JPG",
+      "thumbnailKey": "gallery/thumbs/1600w/DSC01630.webp",
+      "originalUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/originals/DSC01630.JPG",
+      "thumbnailUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/thumbs/1600w/DSC01630.webp"
+    },
+    {
+      "originalName": "DSC01360.JPG",
+      "relativePath": "DSC01360.JPG",
+      "width": 7008,
+      "height": 4672,
+      "mtimeMs": 1774317548154.921,
+      "size": 19934052,
+      "thumbConfigKey": "1600-webp-gallery/thumbs",
+      "thumbConfig": {
+        "thumbWidth": 1600,
+        "thumbFormat": "webp"
+      },
+      "originalKey": "gallery/originals/DSC01360.JPG",
+      "thumbnailKey": "gallery/thumbs/1600w/DSC01360.webp",
+      "originalUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/originals/DSC01360.JPG",
+      "thumbnailUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/thumbs/1600w/DSC01360.webp"
+    },
+    {
+      "originalName": "DSC01301.JPG",
+      "relativePath": "DSC01301.JPG",
+      "width": 2834,
+      "height": 4251,
+      "mtimeMs": 1774317548139.0596,
+      "size": 6562396,
+      "thumbConfigKey": "1600-webp-gallery/thumbs",
+      "thumbConfig": {
+        "thumbWidth": 1600,
+        "thumbFormat": "webp"
+      },
+      "originalKey": "gallery/originals/DSC01301.JPG",
+      "thumbnailKey": "gallery/thumbs/1600w/DSC01301.webp",
+      "originalUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/originals/DSC01301.JPG",
+      "thumbnailUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/thumbs/1600w/DSC01301.webp"
+    },
+    {
+      "originalName": "DSC01238.JPG",
+      "relativePath": "DSC01238.JPG",
+      "width": 2874,
+      "height": 1916,
+      "mtimeMs": 1774317548126.9897,
+      "size": 2610492,
+      "thumbConfigKey": "1600-webp-gallery/thumbs",
+      "thumbConfig": {
+        "thumbWidth": 1600,
+        "thumbFormat": "webp"
+      },
+      "originalKey": "gallery/originals/DSC01238.JPG",
+      "thumbnailKey": "gallery/thumbs/1600w/DSC01238.webp",
+      "originalUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/originals/DSC01238.JPG",
+      "thumbnailUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/thumbs/1600w/DSC01238.webp"
+    },
+    {
+      "originalName": "DSC01237.JPG",
+      "relativePath": "DSC01237.JPG",
+      "width": 3115,
+      "height": 4672,
+      "mtimeMs": 1774317548116.4734,
+      "size": 6779697,
+      "thumbConfigKey": "1600-webp-gallery/thumbs",
+      "thumbConfig": {
+        "thumbWidth": 1600,
+        "thumbFormat": "webp"
+      },
+      "originalKey": "gallery/originals/DSC01237.JPG",
+      "thumbnailKey": "gallery/thumbs/1600w/DSC01237.webp",
+      "originalUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/originals/DSC01237.JPG",
+      "thumbnailUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/thumbs/1600w/DSC01237.webp"
+    },
+    {
+      "originalName": "DSC01133.JPG",
+      "relativePath": "DSC01133.JPG",
+      "width": 6419,
+      "height": 4279,
+      "mtimeMs": 1774317548104.9463,
+      "size": 3891740,
+      "thumbConfigKey": "1600-webp-gallery/thumbs",
+      "thumbConfig": {
+        "thumbWidth": 1600,
+        "thumbFormat": "webp"
+      },
+      "originalKey": "gallery/originals/DSC01133.JPG",
+      "thumbnailKey": "gallery/thumbs/1600w/DSC01133.webp",
+      "originalUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/originals/DSC01133.JPG",
+      "thumbnailUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/thumbs/1600w/DSC01133.webp"
+    },
+    {
+      "originalName": "DSC00716.JPG",
+      "relativePath": "DSC00716.JPG",
+      "width": 6457,
+      "height": 4305,
+      "mtimeMs": 1774317548080.0571,
+      "size": 13866012,
+      "thumbConfigKey": "1600-webp-gallery/thumbs",
+      "thumbConfig": {
+        "thumbWidth": 1600,
+        "thumbFormat": "webp"
+      },
+      "originalKey": "gallery/originals/DSC00716.JPG",
+      "thumbnailKey": "gallery/thumbs/1600w/DSC00716.webp",
+      "originalUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/originals/DSC00716.JPG",
+      "thumbnailUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/thumbs/1600w/DSC00716.webp"
+    },
+    {
+      "originalName": "DSC05970.JPG",
+      "relativePath": "DSC05970.JPG",
+      "width": 5062,
+      "height": 3375,
+      "mtimeMs": 1774254923443.8943,
+      "size": 10034815,
+      "thumbConfigKey": "1600-webp-gallery/thumbs",
+      "thumbConfig": {
+        "thumbWidth": 1600,
+        "thumbFormat": "webp"
+      },
+      "originalKey": "gallery/originals/DSC05970.JPG",
+      "thumbnailKey": "gallery/thumbs/1600w/DSC05970.webp",
+      "originalUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/originals/DSC05970.JPG",
+      "thumbnailUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/thumbs/1600w/DSC05970.webp"
+    },
+    {
+      "originalName": "DSC06480.JPG",
+      "relativePath": "DSC06480.JPG",
+      "width": 3868,
+      "height": 2579,
+      "mtimeMs": 1774254919141.2046,
+      "size": 6596738,
+      "thumbConfigKey": "1600-webp-gallery/thumbs",
+      "thumbConfig": {
+        "thumbWidth": 1600,
+        "thumbFormat": "webp"
+      },
+      "originalKey": "gallery/originals/DSC06480.JPG",
+      "thumbnailKey": "gallery/thumbs/1600w/DSC06480.webp",
+      "originalUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/originals/DSC06480.JPG",
+      "thumbnailUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/thumbs/1600w/DSC06480.webp"
+    },
+    {
+      "originalName": "DSC09043.JPG",
+      "relativePath": "DSC09043.JPG",
+      "width": 7008,
+      "height": 4672,
+      "mtimeMs": 1774254247743.0981,
+      "size": 5509168,
+      "thumbConfigKey": "1600-webp-gallery/thumbs",
+      "thumbConfig": {
+        "thumbWidth": 1600,
+        "thumbFormat": "webp"
+      },
+      "originalKey": "gallery/originals/DSC09043.JPG",
+      "thumbnailKey": "gallery/thumbs/1600w/DSC09043.webp",
+      "originalUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/originals/DSC09043.JPG",
+      "thumbnailUrl": "https://pub-98482c38eca64dbe97c319bbed26cad3.r2.dev/gallery/thumbs/1600w/DSC09043.webp"
+    }
+  ]
+}
