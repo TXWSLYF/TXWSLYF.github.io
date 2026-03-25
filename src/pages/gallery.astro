@@ -13,6 +13,8 @@ type GalleryItem = {
   thumbnailUrl: string;
   width: number | null;
   height: number | null;
+  /** EXIF 拍摄时间（毫秒）；无则按 mtimeMs 排序 */
+  shotTakenMs?: number | null;
   mtimeMs?: number;
 };
 
@@ -20,7 +22,11 @@ const items: GalleryItem[] = Array.isArray(galleryData?.items)
   ? galleryData.items
   : [];
 
-items.sort((a, b) => (b.mtimeMs ?? 0) - (a.mtimeMs ?? 0));
+items.sort((a, b) => {
+  const tb = b.shotTakenMs ?? b.mtimeMs ?? 0;
+  const ta = a.shotTakenMs ?? a.mtimeMs ?? 0;
+  return tb - ta;
+});
 ---
 
 <Layout title={`Gallery | ${SITE.title}`}>

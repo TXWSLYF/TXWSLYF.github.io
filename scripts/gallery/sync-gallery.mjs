@@ -3,6 +3,7 @@ import fs from "node:fs/promises";
 import fssync from "node:fs";
 import path from "node:path";
 import sharp from "sharp";
+import exifr from "exifr";
 import { createReadStream } from "node:fs";
 
 import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
@@ -63,6 +64,35 @@ async function walkImages(dir) {
     out.push(full);
   }
   return out;
+}
+
+/** EXIF 拍摄时间（毫秒）；无 EXIF 或无法解析时为 null */
+async function getShotTakenMs(filePath) {
+  try {
+    const exif = await exifr.parse(filePath, {
+      pick: [
+        "DateTimeOriginal",
+        "DateTimeDigitized",
+        "CreateDate",
+        "ModifyDate",
+      ],
+    });
+    if (!exif || typeof exif !== "object") return null;
+    const candidates = [
+      exif.DateTimeOriginal,
+      exif.DateTimeDigitized,
+      exif.CreateDate,
+      exif.ModifyDate,
+    ];
+    for (const c of candidates) {
+      if (c == null) continue;
+      const t = c instanceof Date ? c.getTime() : new Date(c).getTime();
+      if (Number.isFinite(t)) return t;
+    }
+    return null;
+  } catch {
+    return null;
+  }
 }
 
 async function mapLimit(items, limit, fn) {
@@ -231,12 +261,19 @@ const results = await mapLimit(files, concurrency, async filePath => {
 
   const existingEntry = byRelativePath.get(relativePathPosix);
 
-  const needMeta =
+  const fileChanged =
     !existingEntry ||
     existingEntry.mtimeMs !== mtimeMs ||
-    existingEntry.size !== size ||
+    existingEntry.size !== size;
+
+  const needMeta =
+    fileChanged ||
     existingEntry.width == null ||
     existingEntry.height == null;
+
+  /** 旧版 gallery.json 无该字段时需补读 EXIF */
+  const needShotExtraction =
+    fileChanged || existingEntry.shotTakenMs === undefined;
 
   let width = existingEntry?.width ?? null;
   let height = existingEntry?.height ?? null;
@@ -244,6 +281,14 @@ const results = await mapLimit(files, concurrency, async filePath => {
     const meta = await sharp(filePath).metadata();
     width = meta.width ?? null;
     height = meta.height ?? null;
+  }
+
+  let shotTakenMs =
+    existingEntry && !needShotExtraction
+      ? existingEntry.shotTakenMs
+      : null;
+  if (needShotExtraction) {
+    shotTakenMs = (await getShotTakenMs(filePath)) ?? null;
   }
 
   const needOriginalUpload =
@@ -319,6 +364,7 @@ const results = await mapLimit(files, concurrency, async filePath => {
     relativePath: relativePathPosix,
     width,
     height,
+    shotTakenMs,
     mtimeMs,
     size,
     thumbConfigKey: contentHashForUrlConfig,
@@ -332,8 +378,12 @@ const results = await mapLimit(files, concurrency, async filePath => {
 
 const nextItems = results
   .filter(Boolean)
-  // Keep stable ordering: newest first.
-  .sort((a, b) => (b.mtimeMs ?? 0) - (a.mtimeMs ?? 0));
+  // 按拍摄时间（EXIF）新到旧；无拍摄时间则退回文件 mtime
+  .sort((a, b) => {
+    const tb = b.shotTakenMs ?? b.mtimeMs ?? 0;
+    const ta = a.shotTakenMs ?? a.mtimeMs ?? 0;
+    return tb - ta;
+  });
 
 const nextJson = {
   generatedAt: new Date().toISOString(),
