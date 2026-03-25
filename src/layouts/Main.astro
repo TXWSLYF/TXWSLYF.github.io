@@ -4,26 +4,24 @@ import Breadcrumbs from "@components/Breadcrumbs.astro";
 export interface Props {
   pageTitle: string;
   pageDesc?: string;
+  fullWidth?: boolean;
 }
 
-const { pageTitle, pageDesc } = Astro.props;
+const { pageTitle, pageDesc, fullWidth = false } = Astro.props;
 ---
 
 <Breadcrumbs />
-<main id="main-content">
-  <h1>{pageTitle}</h1>
-  <p>{pageDesc}</p>
-  <slot />
-</main>
+<main class="w-full pb-12">
+  <div class="mx-auto w-full max-w-3xl px-4">
+    <h1 class="text-2xl font-semibold sm:text-3xl">{pageTitle}</h1>
+    {pageDesc && <p class="mb-6 mt-2 italic">{pageDesc}</p>}
+  </div>
 
-<style>
-  #main-content {
-    @apply mx-auto w-full max-w-3xl px-4 pb-12;
-  }
-  #main-content h1 {
-    @apply text-2xl font-semibold sm:text-3xl;
-  }
-  #main-content p {
-    @apply mb-6 mt-2 italic;
-  }
-</style>
+  <div
+    class:list={[
+      fullWidth ? "w-full" : "mx-auto w-full max-w-3xl px-4",
+    ]}
+  >
+    <slot />
+  </div>
+</main>
