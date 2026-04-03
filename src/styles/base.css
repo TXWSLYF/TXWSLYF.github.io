@@ -28,6 +28,20 @@
   html[data-theme="dark"] #sun-svg {
     display: block;
   }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image: radial-gradient(
+      rgba(var(--color-text-base), 0.32) 1px,
+      transparent 1px
+    );
+    background-size: 18px 18px;
+    background-position: 0 0;
+    opacity: 0.62;
+  }
   body {
     @apply flex min-h-screen flex-col bg-skin-fill font-mono text-skin-base 
     selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted;
